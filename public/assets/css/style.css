@@ -58,3 +58,41 @@ a {
 }
 
 
+/******************** NAVBAR ********************/
+
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background: var(--color-black);
+}
+
+.navbar__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav__item {
+    width: 100%;
+}
+
+.nav__item:last-child {
+    margin-top: auto;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.link__text {
+    display: none;
+}
