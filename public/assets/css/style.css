@@ -1,0 +1,60 @@
+/* 
+    Author: Ikkrit;
+    Theme: Genshin Impact;
+    version: 1;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --color-white: #f4f4f4;
+    --color-white-lg: #F0FFF0;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: #000;
+    --color-bg-master: #1D2327;
+    --color-bg-gray-light: #585E6C;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transition: all 400ms ease;
+    --radius: 5px;
+    --shadow-box: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-white);
+}
+
+.container {
+    max-width: 1600px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.message__text {
+   position: absolute;
+   display: block;
+   top: 15vh;
+   z-index: 12;
+   width: 100%;
+   text-align: center;
+}
+
+
