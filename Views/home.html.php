@@ -1,8 +1,40 @@
 <?php require_once ROOT.'/Views/fractions/_head.html.php';?>
 
-<?php require_once ROOT.'/Views/fractions/_nav.html.php';?>
+<!-------------------------- HEADER -------------------------->
 
-<?php if($page == 'home') require_once ROOT.'/Views/fractions/_header.html.php';?>
+    <header class="header">
+        <nav class="navbar__container">
+
+            <div class="navbar__logo">
+                <img src="/assets/img/logos/rpg_icon.png" alt="logo rpg">
+            </div>
+
+            <input type="checkbox" name="" id="check">
+            <label for="check" class="bar-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <ul class="nav__menu">
+                <li class="nav__menu-link"><a class="active" href="#">Home</a></li>
+                <li class="nav__menu-link"><a href="#">A Propos</a></li>
+                <li class="nav__menu-link"><a href="#">Le Monde</a></li>
+                <li class="nav__menu-link"><a href="#">Services</a></li>
+                <li class="nav__menu-link"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="nav__bannner-text">
+        <h2>FITNESS AND GYM</h2>
+        <h1>BE IN THE <span>GAME</span></h1>
+
+        <div class="">
+            <a href="#" class="button__1">EXPLORE</a>
+            <a href="#" class="button__2">BOOK NOW</a>
+        </div>
+    </div>
+
+
 
 <!-------------------------- MAIN -------------------------->
 
