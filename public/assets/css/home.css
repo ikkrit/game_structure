@@ -2,7 +2,7 @@
 
 .header {
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     background-image: url(/assets/img/back/back_dragon.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -15,13 +15,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid transparent;
 }
 
 .navbar__logo img {
-    width: 140px;
+    width: 80px;
 }
 
 .navbar__logo {
+    width: 140px;
     margin-left: 20px;
 }
 
@@ -37,7 +40,7 @@
     width: 100%;
     height: 0vh;
     top: 100px;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.9);
     text-align: center;
     transition: all 0.5s;
 }
@@ -45,13 +48,15 @@
 .nav__menu-link {
     display: none;
     line-height: 30px;
-    margin: 50px 0;
+    margin: 10px 30px 10px 0;
     transition: all 0.5s;
+    border: 1px solid #fff;
+    padding: 10px 0;
 }
 
 .nav__menu-link a {
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -67,9 +72,96 @@
 }
 
 #check:checked ~ .nav__menu {
-    height: 100vh;
+    height: 30vh;
 }
 
 #check:checked ~ .nav__menu li {
     display: block;
+}
+
+.nav__bannner-text {
+    padding: 0 30px;
+    margin-top: 150px;
+    text-align: center;
+    color: #fff;
+}
+
+.nav__bannner-text h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.nav__bannner-text span {
+    color: rgb(248, 8, 8);
+}
+
+.nav__bannner-text h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.button__1 {
+    margin-right: 40px;
+    padding: 10px 30px;
+    background: rgb(248, 8, 8);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.button__1:hover {
+    background: #fff;
+    color: rgb(248, 8, 8);
+    transition: 0.5s;
+}
+
+.button__2 {
+    margin-right: 40px;
+    padding: 10px 30px;
+    background: #fff;
+    color: rgb(248, 8, 8);
+    border-radius: 5px;
+}
+
+.button__2:hover {
+    background: rgb(248, 8, 8);
+    color: #fff;
+    transition: 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar__logo {
+        margin-left: 50px;
+    }
+    .navbar__container {
+        height: 100px;
+        border-bottom: 1px solid #fff;
+    }
+    .bar-btn {
+        display: none;
+    }
+    .nav__menu {
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 50px;
+    }
+    .nav__menu-link {
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        border: 1px solid transparent;
+    }
+    .nav__menu-link a {
+        font-size: 18px;
+    }
+    .nav__bannner-text h1 {
+        font-size: 70px;
+        margin-bottom: 30px;
+    }
+    .nav__bannner-text h2 {
+        font-size: 20px;
+    }
 }

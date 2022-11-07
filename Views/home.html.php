@@ -22,21 +22,22 @@
                 <li class="nav__menu-link"><a href="#">Contact</a></li>
             </ul>
         </nav>
-    </header>
 
-    <div class="nav__bannner-text">
-        <h2>FITNESS AND GYM</h2>
-        <h1>BE IN THE <span>GAME</span></h1>
+        <div class="nav__bannner-text">
+            <h2>FITNESS AND GYM</h2>
+            <h1>BE IN THE <span>GAME</span></h1>
 
-        <div class="">
-            <a href="#" class="button__1">EXPLORE</a>
-            <a href="#" class="button__2">BOOK NOW</a>
+            <div class="">
+                <a href="#" class="button__1">EXPLORE</a>
+                <a href="#" class="button__2">BOOK NOW</a>
+            </div>
         </div>
-    </div>
 
+    </header>
 
 
 <!-------------------------- MAIN -------------------------->
+
 
         <div class="message__text">
             <?php if(!empty($_SESSION['erreur'])): ?>
@@ -52,10 +53,11 @@
             <?php endif; ?>
         </div>
 
-        <?= $content;?>
+        <main class="main">
+            <?= $content;?>
+        </main>
 
 
-    
 <!------------------------- FOOTER ------------------------->
 
 <?php require_once ROOT.'/Views/fractions/_footer.html.php';?>
