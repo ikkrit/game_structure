@@ -1,22 +1,8 @@
-const themeMap = {
-    dark: "light",
-    light: "solar",
-    solar: "dark"
-  };
-  
-  const theme = localStorage.getItem('theme')
-    || (tmp = Object.keys(themeMap)[0],
-        localStorage.setItem('theme', tmp),
-        tmp);
-  const bodyClass = document.body.classList;
-  bodyClass.add(theme);
-  
-  function toggleTheme() {
-    const current = localStorage.getItem('theme');
-    const next = themeMap[current];
-  
-    bodyClass.replace(current, next);
-    localStorage.setItem('theme', next);
-  }
-  
-  document.getElementById('themeButton').onclick = toggleTheme;
+// NAVBAR
+
+const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
