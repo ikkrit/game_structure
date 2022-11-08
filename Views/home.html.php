@@ -9,12 +9,15 @@
 
         <header class="header">
             <a href="#" class="header__logo"><img src="/assets/img/logos/logo.png" alt=""></a>
-            <ul class="header__menu">
+            <div class="header__toggle" onclick="toggleMenu();"></div>
+
+            <ul class="header__menu header__navigation">
                 <li class="header__link"><a href="#">Home</a></li>
                 <li class="header__link"><a href="#">Menu</a></li>
                 <li class="header__link"><a href="#">What's New</a></li>
                 <li class="header__link"><a href="#">Contact</a></li>
             </ul>
+
         </header>
 
         <div class="header__content">

@@ -140,3 +140,88 @@
     background: #017143;
     clip-path: circle(600px at right 800px);
 }
+
+@media (max-width: 991px) {
+    .header__container {
+        padding: 20px 20px 120px;
+    }
+    .header {
+        padding: 20px;
+    }
+    .header__logo {
+        max-width: 60px;
+    }
+    .header__toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(/assets/img/home/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }
+    
+    .header__toggle.active {
+        position: fixed;
+        right: 20px;
+        background: url(/assets/img/home/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .header__menu {
+        display: none;
+    }
+    .header__navigation.navigation.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 10;
+    }
+    .header__link a {
+        font-weight: 400;
+        margin: 5px 0;
+    }
+    .header__content {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    .header__content-text {
+        max-width: 100%;
+    }
+    .header__content-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    .header__content-img {
+        max-width: 100%;
+        justify-content: center;
+    }
+    .header__content-img img {
+        max-width: 300px;
+    }
+    .header__thumb-img img {
+        max-width: 40px;
+    }
+    .header__social {
+        background: #017143;
+        right: 0;
+        width: 50px;
+        padding-right: 30px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .header__circle {
+        clip-path: circle(400px at center bottom);
+    }
+}
