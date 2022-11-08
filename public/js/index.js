@@ -1,8 +1,10 @@
-// NAVBAR
+// HEADER HOME
 
-const toggleButton = document.getElementsByClassName('toggle-button')[0]
-const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+const imgSlider = (anything) => {
+  document.querySelector('.content__img').src = anything;
+}
 
-toggleButton.addEventListener('click', () => {
-  navbarLinks.classList.toggle('active')
-})
+const changeCirclecolor = (color) => {
+  const circle = document.querySelector('.header__circle');
+  circle.style.background = color;
+}
