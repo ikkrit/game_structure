@@ -6,7 +6,7 @@
     {
         protected $template = 'default';
 
-        public function render(string $file, array $donnees = [], string $template = 'default', $page = '')
+        public function render(string $file, array $donnees = [], string $template = 'default', string $page = '')
         {
             // EXTRACTION DONNEES
             extract($donnees);

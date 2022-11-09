@@ -6,7 +6,7 @@
     {   
         public function index()
         {
-            $this->render('main', [], '404','404');
+            $this->render('error/error', [], 'home','error');
         }
     }
 
