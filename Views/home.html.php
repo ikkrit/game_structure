@@ -12,29 +12,29 @@
             <div class="toggle" onclick="toggleMenu();"></div>
 
             <ul class="navigation">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">What's New</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="#">Le jeux</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
 
         </header>
 
         <div class="content">
             <div class="content__text">
-                <h2>It's not just Coffee<br>It's <span>Starbucks</span></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, neque sit? Consequatur dolor reiciendis impedit iusto quisquam! Sequi neque veritatis molestiae laboriosam consequatur, provident inventore sit obcaecati quibusdam fugiat qui.</p>
-                <a href="#">Learn More</a>
+                <h2>Le RPG navigateur<br>dont tu est le <span>hero</span></h2>
+                <p>Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.</p>
             </div>
+
             <div class="content__img">
                 <img src="/assets/img/home/img1.png" class="img__item" alt="">
             </div>
         </div>
 
         <ul class="thumb">
-            <li><img src="/assets/img/home/thumb1.png" onclick="imgSlider('/assets/img/home/img1.png'); changeCirclecolor('#017143')" alt=""></li>
-            <li><img src="/assets/img/home/thumb2.png" onclick="imgSlider('/assets/img/home/img2.png'); changeCirclecolor('#eb7495')" alt=""></li>
-            <li><img src="/assets/img/home/thumb3.png" onclick="imgSlider('/assets/img/home/img3.png'); changeCirclecolor('#d752b1')" alt=""></li>
+            <li><img src="/assets/img/home/thumb1.png" onclick="imgSlider('/assets/img/home/img1.png'); changeCirclecolor('#5F345F')" alt=""></li>
+            <li><img src="/assets/img/home/thumb2.png" onclick="imgSlider('/assets/img/home/img2.png'); changeCirclecolor('#00008E')" alt=""></li>
+            <li><img src="/assets/img/home/thumb3.png" onclick="imgSlider('/assets/img/home/img3.png'); changeCirclecolor('#007300')" alt=""></li>
         </ul>
 
         <ul class="social">
@@ -46,7 +46,7 @@
     </section>
 
 
-<!-------------------------- MAIN -------------------------->
+<!-------------------------- MESSAGES -------------------------->
 
 
         <div class="message__text">
@@ -63,10 +63,11 @@
             <?php endif; ?>
         </div>
 
+<!-------------------------- MAIN -------------------------->
+
         <main class="main">
             <?= $content;?>
         </main>
-
 
 <!------------------------- FOOTER ------------------------->
 
