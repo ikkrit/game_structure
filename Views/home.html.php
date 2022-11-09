@@ -3,44 +3,44 @@
 <!-------------------------- HEADER -------------------------->
 
     
-    <section class="header__container">
+    <section class="section__header">
 
-        <div class="header__circle"></div>
+        <div class="circle"></div>
 
         <header class="header">
-            <a href="#" class="header__logo"><img src="/assets/img/logos/logo.png" alt=""></a>
-            <div class="header__toggle" onclick="toggleMenu();"></div>
+            <a href="#" class="logo"><img src="/assets/img/logos/logo.png" alt=""></a>
+            <div class="toggle" onclick="toggleMenu();"></div>
 
-            <ul class="header__menu header__navigation">
-                <li class="header__link"><a href="#">Home</a></li>
-                <li class="header__link"><a href="#">Menu</a></li>
-                <li class="header__link"><a href="#">What's New</a></li>
-                <li class="header__link"><a href="#">Contact</a></li>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
 
         </header>
 
-        <div class="header__content">
-            <div class="header__content-text">
+        <div class="content">
+            <div class="content__text">
                 <h2>It's not just Coffee<br>It's <span>Starbucks</span></h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, neque sit? Consequatur dolor reiciendis impedit iusto quisquam! Sequi neque veritatis molestiae laboriosam consequatur, provident inventore sit obcaecati quibusdam fugiat qui.</p>
                 <a href="#">Learn More</a>
             </div>
-            <div class="header__content-img">
-                <img src="/assets/img/home/img1.png" class="content__img" alt="">
+            <div class="content__img">
+                <img src="/assets/img/home/img1.png" class="img__item" alt="">
             </div>
         </div>
 
-        <ul class="header__thumb">
-            <li class="header__thumb-img"><img src="/assets/img/home/thumb1.png" onclick="imgSlider('/assets/img/home/img1.png'); changeCirclecolor('#017143')" alt=""></li>
-            <li class="header__thumb-img"><img src="/assets/img/home/thumb2.png" onclick="imgSlider('/assets/img/home/img2.png'); changeCirclecolor('#eb7495')" alt=""></li>
-            <li class="header__thumb-img"><img src="/assets/img/home/thumb3.png" onclick="imgSlider('/assets/img/home/img3.png'); changeCirclecolor('#d752b1')" alt=""></li>
+        <ul class="thumb">
+            <li><img src="/assets/img/home/thumb1.png" onclick="imgSlider('/assets/img/home/img1.png'); changeCirclecolor('#017143')" alt=""></li>
+            <li><img src="/assets/img/home/thumb2.png" onclick="imgSlider('/assets/img/home/img2.png'); changeCirclecolor('#eb7495')" alt=""></li>
+            <li><img src="/assets/img/home/thumb3.png" onclick="imgSlider('/assets/img/home/img3.png'); changeCirclecolor('#d752b1')" alt=""></li>
         </ul>
 
-        <ul class="header__social">
-            <li class="header__social-img"><a href="#"><img src="/assets/img/icons/facebook.png" alt=""></a></li>
-            <li class="header__social-img"><a href="#"><img src="/assets/img/icons/twitter.png" alt=""></a></li>
-            <li class="header__social-img"><a href="#"><img src="/assets/img/icons/instagram.png" alt=""></a></li>
+        <ul class="social">
+            <li><a href="#"><img src="/assets/img/icons/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="/assets/img/icons/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="/assets/img/icons/instagram.png" alt=""></a></li>
         </ul>
 
     </section>

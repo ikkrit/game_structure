@@ -1,17 +1,17 @@
 // HEADER HOME
 
 const imgSlider = (anything) => {
-  document.querySelector('.content__img').src = anything;
+  document.querySelector('.img__item').src = anything;
 };
 
 const changeCirclecolor = (color) => {
-  const circle = document.querySelector('.header__circle');
+  const circle = document.querySelector('.circle');
   circle.style.background = color;
 };
 
 const toggleMenu = () => {
-  let menuToggle = document.querySelector('.header__toggle');
-  let navigation = document.querySelector('.header__navigation');
+  let menuToggle = document.querySelector('.toggle');
+  let navigation = document.querySelector('.navigation');
 
   menuToggle.classList.toggle('active');
   navigation.classList.toggle('active');

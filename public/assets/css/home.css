@@ -1,4 +1,4 @@
-.header__container {
+.section__header {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -21,24 +21,24 @@
     align-items: center;
 }
 
-.header__logo {
+.header .logo {
     position: relative;
     max-width: 80px;
 }
 
-.header__menu {
+.header ul {
     position: relative;
     display: flex;
 }
 
-.header__link a {
+.header ul li a {
     display: inline-block;
     color: #333;
     font-weight: 400;
     margin-left: 40px;
 }
 
-.header__content {
+.content {
     position: relative;
     width: 100%;
     display: flex;
@@ -46,29 +46,29 @@
     align-items: center;
 }
 
-.header__content-text {
+.content .content__text {
     position: relative;
     max-width: 600px;
 }
 
-.header__content-text h2 {
+.content .content__text h2 {
     color: #333;
     font-size: 4em;
     line-height: 1.4em;
     font-weight: 500;
 }
 
-.header__content-text h2 span {
+.content .content__text h2 span {
     color: #017143;
     font-size: 1.2em;
     font-weight: 900;
 }
 
-.header__content-text p {
+.content .content__text p {
     color: #333;
 }
 
-.header__content-text a {
+.content .content__text a {
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
@@ -79,7 +79,7 @@
     letter-spacing: 1px;
 }
 
-.header__content-img {
+.content .content__img {
     width: 600px;
     display: flex;
     justify-content: flex-end;
@@ -87,11 +87,11 @@
     margin-top: 50px;
 }
 
-.header__content-img img {
+.content .content__img img {
     max-width: 340px;
 }
 
-.header__thumb {
+.thumb {
     position: absolute;
     left: 50%;
     bottom: 20px;
@@ -99,22 +99,22 @@
     display: flex;
 }
 
-.header__thumb-img {
+.thumb li {
     display: inline-block;
     margin: 0 20px;
     cursor: pointer;
     transition: 0.5s;
 }
 
-.header__thumb-img:hover {
+.thumb li:hover {
     transform: translateY(-15px);
 }
 
-.header__thumb-img img {
+.thumb li img {
     max-width: 60px;
 }
 
-.header__social {
+.social {
     position: absolute;
     top: 50%;
     right: 30px;
@@ -125,14 +125,14 @@
     flex-direction: column;
 }
 
-.header__social-img a {
+.social li a {
     display: inline-block;
     margin: 5px 0;
     transform: scale(0.6);
     filter: invert(1);
 }
 
-.header__circle {
+.circle {
     position: absolute;
     top: 0;
     left: 0;
@@ -143,16 +143,16 @@
 }
 
 @media (max-width: 991px) {
-    .header__container {
-        padding: 20px 20px 120px;
-    }
     .header {
         padding: 20px;
     }
-    .header__logo {
+    .header .logo {
         max-width: 60px;
     }
-    .header__toggle {
+    .header ul {
+        display: none;
+    }
+    .toggle {
         position: relative;
         width: 30px;
         height: 30px;
@@ -162,67 +162,46 @@
         background-position: center;
         background-repeat: no-repeat;
         filter: invert(1);
-        z-index: 11;
     }
-    
-    .header__toggle.active {
-        position: fixed;
-        right: 20px;
+    .toggle.active {
         background: url(/assets/img/home/close.png);
         background-size: 25px;
         background-position: center;
         background-repeat: no-repeat;
     }
-    .header__menu {
-        display: none;
+    .section__header {
+        padding: 20px 20px 120px;
     }
-    .header__navigation.navigation.active {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: #fff;
-        z-index: 10;
-    }
-    .header__link a {
-        font-weight: 400;
-        margin: 5px 0;
-    }
-    .header__content {
+    .content {
         flex-direction: column;
         margin-top: 100px;
     }
-    .header__content-text {
+    .content .content__text {
         max-width: 100%;
     }
-    .header__content-text h2 {
-        font-size: 2.5rem;
+    .content .content__text h2 {
+        font-size: 2.5em;
         margin-bottom: 15px;
     }
-    .header__content-img {
+    .content .content__img {
         max-width: 100%;
         justify-content: center;
     }
-    .header__content-img img {
+    .content .content__img img {
         max-width: 300px;
     }
-    .header__thumb-img img {
+    .thumb li img {
         max-width: 40px;
     }
-    .header__social {
+    .circle {
+        clip-path: circle(400px at center bottom);
+    }
+    .social {
         background: #017143;
         right: 0;
         width: 50px;
-        padding-right: 30px;
+        padding-right: 25px;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-    }
-    .header__circle {
-        clip-path: circle(400px at center bottom);
     }
 }
