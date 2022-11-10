@@ -1,5 +1,7 @@
 <?php require_once ROOT.'/Views/fractions/_head.html.php';?>
 
+<?php if($page != 'home') require_once ROOT.'/Views/fractions/_nav.html.php';?>
+
 
 <!-------------------------- MAIN -------------------------->
 

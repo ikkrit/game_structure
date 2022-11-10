@@ -9,9 +9,9 @@
             $this->render('home/home_index', [], 'home', 'home');
         }
 
-        public function charactersProfil(int $characters_id)
+        public function charactersProfil(int $character_id)
         {
-            $this->render('characters/characters_profil', [], 'home', 'home');
+            $this->render('characters/characters_profil', [], 'home', 'characters');
         }
 
         public function charactersLogin()
