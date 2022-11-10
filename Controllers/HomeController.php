@@ -8,6 +8,7 @@
         {
             $this->render('home/home_index', [], 'home', 'home');
         }
+
     }
 
 ?>
