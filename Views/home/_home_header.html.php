@@ -6,7 +6,7 @@
 <div class="circle"></div>
 
 <header class="header">
-    <a href="#" class="logo"><img src="/assets/img/logos/logo.png" alt=""></a>
+    <a href="#" class="logo"><img src="/assets/img/logos/logo.png" alt="logo rpg_nav"></a>
     <div class="toggle" onclick="toggleMenu();"></div>
 
     <ul class="navigation">

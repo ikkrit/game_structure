@@ -1,15 +1,12 @@
 <nav class="navbar">
-  <div class="brand-title">RPG NAV</div>
-  <a href="#" class="toggle-button">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </a>
-  <div class="navbar-links">
-    <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="#">A propos</a></li>
-      <li><a href="#">Contact</a></li>
+    <h2 class="logo">RPG Nav</h2>
+    <div class="toggle" onclick="toggleMenu();"></div>
+
+    <ul class="navigation">
+        <li><a href="/home">Home</a></li>
+        <li><a href="#">Le jeux</a></li>
+        <li><a href="#">A propos</a></li>
+        <li><a href="/contact">Contact</a></li>
     </ul>
-  </div>
+
 </nav>

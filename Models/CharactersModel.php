@@ -10,6 +10,8 @@
         protected $character_weapon;
         protected $character_description;
         protected $character_img;
+        protected $character_back;
+        protected $actif;
 
 
         public function __construct()
@@ -17,7 +19,7 @@
             $this->table = 'characters';
         }
 
-        
+
         public function getCharacter_id()
         {
                 return $this->character_id;
@@ -86,6 +88,30 @@
         public function setCharacter_img($character_img)
         {
                 $this->character_img = $character_img;
+
+                return $this;
+        }
+
+        public function getCharacter_back()
+        {
+                return $this->character_back;
+        }
+
+        public function setCharacter_back($character_back)
+        {
+                $this->character_back = $character_back;
+
+                return $this;
+        }
+
+        public function getActif()
+        {
+                return $this->active;
+        }
+
+        public function setActif($active)
+        {
+                $this->active = $active;
 
                 return $this;
         }
