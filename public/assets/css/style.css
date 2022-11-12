@@ -29,6 +29,7 @@ body {
     max-width: 1600px;
     margin: auto;
     background: var(--main-gray);
+    font-family: 'Poppins', sans-serif;
 }
 
 li {

@@ -1,7 +1,7 @@
 <!-------------------------- HEADER -------------------------->
 
     
-<section class="section__header">
+<section class="section__header home">
 
 <div class="circle"></div>
 
