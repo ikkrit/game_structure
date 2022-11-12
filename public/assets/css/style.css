@@ -54,14 +54,14 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--main-gray);
+    background: var(--back-color-black);
     font-family: 'Poppins', sans-serif;
 }
 
 .navbar .logo {
     position: relative;
     font-size: 2.5rem;
-    
+    color: var(--color-white);
 }
 
 .navbar ul {
@@ -71,7 +71,7 @@ a {
 
 .navbar ul li a {
     display: inline-block;
-    color: var(--main-policy-black);
+    color: var(--color-white);
     font-weight: 400;
     margin-left: 40px;
     padding-top: 10px;
@@ -123,7 +123,6 @@ a {
         background-size: 30px;
         background-position: center;
         background-repeat: no-repeat;
-        filter: invert(1);
         z-index: 11;
     }
     .toggle.active {
@@ -144,7 +143,7 @@ a {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: var(--main-gray);
+        background: var(--back-color-black);
         z-index: 10;
     }
     .thumb li img {
