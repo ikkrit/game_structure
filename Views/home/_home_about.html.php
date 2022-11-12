@@ -22,7 +22,7 @@
                 <img src="/assets/img/home/gommy.webp" alt="">
             </div>
             <div class="about__text-box">
-                <h4>Gommy</h4>
+                <h4>Robux</h4>
                 <img src="/assets/img/home/gommy.webp" alt="">
             </div>
 
