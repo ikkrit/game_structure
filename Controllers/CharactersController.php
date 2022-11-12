@@ -12,7 +12,7 @@
 
             $characters = $charactersModel->findBy(['actif' => 1]);
 
-            $this->render('characters/characters_index', compact('characters'), 'home', 'home');
+            $this->render('characters/characters_index', compact('characters'), 'home', 'characters');
         }
 
         public function profil(int $character_id)

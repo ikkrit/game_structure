@@ -6,6 +6,12 @@
     background: var(--main-gray);
 }
 
+.home__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 /**** HEADER ****/
 
 .section__header {
@@ -231,11 +237,6 @@
     padding: 60px 100px;
 }
 
-.home__title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
 .about {
     display: flex;
     width: 100%;
@@ -278,6 +279,113 @@
     width: 40px;
 }
 
-.about__desc p {
+.about__desc {
+    padding: 20px 10px;
+    text-align: justify;
+}
+
+
+/**** GAME ****/
+
+
+.game__container {
+    min-height: 40vh;
+    border-top: 1px solid var(--color-black);
+    flex-direction: column;
+    padding: 60px 100px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.game__box {
+    width: 100%;
+}
+
+.game__box-img {
+    width: 100%;
+    text-align: center;
+}
+
+.game__box-img img {
+    width: 80%;
+}
+
+.game__box-text {
+    margin: auto;
+    width: 80%;
+    text-align: justify;
     padding: 20px 0;
 }
+
+
+/**** CHARACTERS ****/
+
+
+.characters__container {
+    min-height: 60vh;
+    border-top: 1px solid var(--color-black);
+    flex-direction: column;
+    padding: 60px 100px;
+}
+
+.characters {
+    display: flex;
+    flex-direction: column;
+}
+
+.characters__img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.characters__img img {
+    width: 30%;
+    padding: 0 50px;
+}
+
+.characters__text {
+    padding: 50px 0;
+}
+
+.btn-characters {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    background: var(--main-policy-red);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-box);
+    border: 1px solid transparent;
+}
+
+.btn-characters:hover {
+    color: var(--main-policy-red);
+    background: var(--color-white);
+    border: 1px solid var(--main-policy-red);
+}
+
+@media (max-width: 991px) {
+    .characters__img {
+        flex-direction: column;
+        align-items: center;
+    }
+    .characters__img img {
+        width: 60%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .characters__img img {
+        width: 100%;
+        padding: 0 30px;
+    }
+}
+

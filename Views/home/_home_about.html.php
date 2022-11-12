@@ -30,7 +30,7 @@
     </div>
 
     <div class="about__desc">
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sed quam. Ipsum perspiciatis aspernatur delectus fugiat obcaecati harum, dolores accusantium nam et repellendus nesciunt a magni quos tempora laboriosam quae!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sed quam. Ipsum perspiciatis aspernatur delectus fugiat obcaecati harum, dolores accusantium nam et repellendus nesciunt a magni quos tempora laboriosam quae!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, sed quam. Ipsum perspiciatis aspernatur delectus fugiat obcaecati harum, dolores accusantium nam et repellendus nesciunt a magni quos tempora laboriosam quae!</p>
     </div>
 
 </section>
