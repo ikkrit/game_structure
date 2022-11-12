@@ -15,9 +15,14 @@
             $this->render('characters/characters_index', compact('characters'), 'home', 'home');
         }
 
-        public function charactersProfil(int $character_id)
+        public function profil(int $character_id)
         {
-            $this->render('characters/characters_profil', [], 'home', 'characters');
+            // INSTANCE MODEL
+            $charactersModel = new CharactersModel;
+            // CHERCHER 1 ANNONCES
+            $characters = $charactersModel->find($character_id,'character_id');
+            // ENVOIE A LA VUE
+            $this->render('characters/characters_profil', compact('characters'), 'home', 'characters');
         }
 
         public function charactersCreate()
