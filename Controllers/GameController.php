@@ -2,11 +2,10 @@
 
     namespace App\Controllers;
 
-use App\Core\ConstGame as CoreConstGame;
-use App\Core\Form;
-    use App\Core\Game;
+    use App\Core\Form;
+    use App\Core\Constantes;
+    use App\Core\GameMethodes;
     use App\Models\GameModel;
-    use App\Models\ConstGame;
 
     class GameController extends Controller
     {
