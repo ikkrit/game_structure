@@ -11,7 +11,7 @@
 
     <ul class="navigation">
         <li><a href="/home">Home</a></li>
-        <li><a href="#">Le jeux</a></li>
+        <li><a href="/game">Jouer</a></li>
         <li><a href="#">A propos</a></li>
         <li><a href="/contact">Contact</a></li>
     </ul>
@@ -22,6 +22,7 @@
     <div class="content__text">
         <h2>Le RPG navigateur<br>dont tu es le <span>hero</span></h2>
         <p>Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.Choisissez votre hero parmis les 3 classes et parter à l'aventure dans le monde d'Arava.</p>
+        <a class="btn__start" href="/game">Commencer à jouer</a>
     </div>
 
     <div class="content__img">
