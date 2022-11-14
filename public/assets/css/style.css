@@ -19,15 +19,18 @@
     --shadow-box: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-* {
-    padding: 0;
+*,
+::before,
+::after {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    max-width: 1600px;
-    margin: auto;
+    max-width: 1600px !important;
+    margin: auto !important;
     background: var(--main-gray);
     font-family: 'Poppins', sans-serif;
 }
@@ -40,12 +43,21 @@ a {
     text-decoration: none;
 }
 
+.message__text {
+    position: absolute;
+    display: block;
+    top: 15vh;
+    z-index: 12;
+    width: 100%;
+    text-align: center;
+ }
+
 
 /**** NAVBAR GLOBAL****/
 
 
 .navbar {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,6 +68,7 @@ a {
     align-items: center;
     background: var(--back-color-black);
     font-family: 'Poppins', sans-serif;
+    z-index: 100;
 }
 
 .navbar .logo {
