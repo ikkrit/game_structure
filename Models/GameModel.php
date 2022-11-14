@@ -14,10 +14,11 @@
     
         protected $game_id;
         protected $game_character;
+        protected $game_name_character;
         protected $game_zone;
         protected $game_point;
         protected $game_score;
-        protected $user_id;
+        protected $game_user_id;
 
 
         public function getGame_id()
@@ -40,6 +41,18 @@
         public function setGame_character($game_character)
         {
                 $this->game_character = $game_character;
+
+                return $this;
+        }
+
+        public function getGame_name_character()
+        {
+                return $this->game_name_character;
+        }
+
+        public function setGame_name_character($game_name_character)
+        {
+                $this->game_name_character = $game_name_character;
 
                 return $this;
         }
@@ -80,17 +93,18 @@
                 return $this;
         }
 
-        public function getUser_id()
+        public function getGame_user_id()
         {
-                return $this->user_id;
+                return $this->game_user_id;
         }
 
-        public function setUser_id($user_id)
+        public function setGame_user_id($game_user_id)
         {
-                $this->user_id = $user_id;
+                $this->game_user_id = $game_user_id;
 
                 return $this;
         }
+
     }
 
 ?>
