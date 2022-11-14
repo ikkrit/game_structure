@@ -14,28 +14,24 @@
             $this->render('game/game_index', [], 'home', 'game');
         }
 
-        public function menu(int $menu)
+        public function start()
         {
-            switch($menu) {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                default:
-
-            }
+            echo "start";
         }
 
-        public function start($game)
+        public function continue()
         {
-            while($game == false) {
+            echo "continue";
+        }
 
-            }
+        public function end()
+        {
 
+        }
+
+        public function score()
+        {
+            echo "score";
         }
 
     }
