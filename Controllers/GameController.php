@@ -4,8 +4,8 @@
 
     use App\Core\Form;
     use App\Core\Constantes;
-    use App\Core\GameMethodes;
-    use App\Models\GameModel;
+    use App\Models\GamesModel;
+    use App\Models\ZonesModel;
 
     class GameController extends Controller
     {
@@ -28,7 +28,7 @@
                     $game_character_name = strip_tags($_POST['game_character_name']);
 
                     // ON INSTANCIE NOTRE MODELE
-                    $game = new GameModel;
+                    $game = new GamesModel;
 
                     // ON HYDRATE
                     $game->setGame_user_id($user_id)
@@ -87,6 +87,33 @@
             }
         }
 
+        public function throw_dice()
+        {
+            $throw = rand(1,6);
+            return $throw;
+        }
+
+        public function zone()
+        {
+            $zone_random = rand(1,6);
+
+            $gameModel = new GamesModel;
+
+            $zone = $gameModel->find($zone_random,'zone_id');
+
+            return $zone;
+        }
+        public function enemy()
+        {
+            $enemy_random = rand(1,10);
+
+            $gameModel = new GamesModel;
+    
+            $zone = $gameModel->find($enemy_random,'enemy_id');
+
+            return $zone;
+        }
+
         public function start()
         {
             echo 'start';
@@ -99,7 +126,7 @@
 
         public function end()
         {
-
+            echo "fin de partie";
         }
 
         public function score()

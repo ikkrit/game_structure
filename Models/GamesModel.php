@@ -2,7 +2,7 @@
 
     namespace App\Models;
 
-    class GameModel extends Model
+    class GamesModel extends Model
     {
         
 
