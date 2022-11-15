@@ -6,6 +6,7 @@
     use App\Core\Constantes;
     use App\Models\GamesModel;
     use App\Models\ZonesModel;
+    use App\Models\EnemyModel;
 
     class GameController extends Controller
     {
@@ -87,36 +88,45 @@
             }
         }
 
-        public function throw_dice()
+        private function throw_dice()
         {
             $throw = rand(1,6);
             return $throw;
         }
 
-        public function zone()
+        private function zone()
         {
             $zone_random = rand(1,6);
 
-            $gameModel = new GamesModel;
+            $zonesModel = new ZonesModel;
 
-            $zone = $gameModel->find($zone_random,'zone_id');
+            $zone = $zonesModel->find($zone_random,'zone_id');
 
             return $zone;
         }
-        public function enemy()
+
+        private function enemy()
         {
-            $enemy_random = rand(1,10);
+            $enemy_random = rand(1,6);
 
-            $gameModel = new GamesModel;
+            $enemyModel = new EnemyModel;
     
-            $zone = $gameModel->find($enemy_random,'enemy_id');
+            $enemy = $enemyModel->find($enemy_random,'enemy_id');
 
-            return $zone;
+            return $enemy;
         }
 
         public function start()
         {
-            echo 'start';
+            $gameModel = new GamesModel;
+
+            $zone = $this->zone();
+
+            $enemy = $this->enemy();
+
+            $game = [$zone,$enemy];
+
+            $this->render('game/game_start', [], 'home', 'game');
         }
 
         public function continue()

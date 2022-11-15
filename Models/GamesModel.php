@@ -4,14 +4,7 @@
 
     class GamesModel extends Model
     {
-        
 
-        public function __construct()
-        {
-            $this->table = 'game';
-        }
-
-    
         protected $game_id;
         protected $game_character;
         protected $game_name_character;
@@ -19,6 +12,12 @@
         protected $game_point;
         protected $game_score;
         protected $game_user_id;
+        
+
+        public function __construct()
+        {
+            $this->table = 'game';
+        }
 
 
         public function getGame_id()
