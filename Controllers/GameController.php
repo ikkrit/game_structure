@@ -54,20 +54,26 @@
                 $form = new Form;
 
                 $form->startForm()
-                     ->addLabelFor('choice', 'Choix du personnage :')
+                     /*->addLabelFor('choice', 'Choix du personnage :')
                      ->addInput('text', 'game_character', [
                         'id' => 'choice', 
                         'class' => 'form-control',
                         'value' => $game_character
-                    ])
+                    ])*/
                     ->addLabelFor('name', 'Nom du personnage :')
                      ->addInput('text', 'game_character_name', [
                         'id' => 'name', 
                         'class' => 'form-control',
                         'value' => $game_character_name
                     ])
-                    ->addSelect('choice',['dog','cat'],['class' => 'select'])
-                     ->addButton('Commencer', ['class' => 'btn btn-primary'])
+                    ->addLabelFor('choice', 'Class du personnage :')
+                    ->addSelect('game_character',
+                        ['1' => 'Guerrier','3' => 'Sorcier'],[
+                        'class' => 'form-control', 
+                        'id' => 'choice',
+                        'value' => $game_character
+                    ])
+                     ->addButton('Commencer', ['type' => 'submit','class' => 'btn btn-primary'])
                      ->endForm();
 
                 $this->render('game/game_start', ['form' => $form->create()]);
