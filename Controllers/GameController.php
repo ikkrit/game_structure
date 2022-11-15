@@ -14,7 +14,7 @@
             $this->render('game/game_index', [], 'home', 'game');
         }
 
-        public function start()
+        public function create()
         {
             // ON VERIFIE SI L'UTILISATEUR EST CONNECTER
             if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
@@ -39,8 +39,8 @@
                     $game->create();
 
                     // REDIRECTION
-                    $_SESSION['message'] = "Votre annonce a été enregistrée avec succès";
-                    header('Location: /');
+                    $_SESSION['message'] = "Votre personnage a été enregistrée avec succès";
+                    header('Location: /game/start');
                     exit;
 
                 } else {
@@ -76,7 +76,7 @@
                      ->addButton('Commencer', ['type' => 'submit','class' => 'btn btn-primary'])
                      ->endForm();
 
-                $this->render('game/game_start', ['form' => $form->create()]);
+                $this->render('game/game_start', ['form' => $form->create()],'home', 'game');
 
 
             } else {
@@ -85,6 +85,11 @@
                 header('Location: /users/login');
                 exit;
             }
+        }
+
+        public function start()
+        {
+            echo 'start';
         }
 
         public function continue()
