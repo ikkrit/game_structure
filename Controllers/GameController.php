@@ -66,6 +66,7 @@
                         'class' => 'form-control',
                         'value' => $game_character_name
                     ])
+                    ->addSelect('choice',['dog','cat'],['class' => 'select'])
                      ->addButton('Commencer', ['class' => 'btn btn-primary'])
                      ->endForm();
 
