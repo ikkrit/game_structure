@@ -68,8 +68,8 @@
                     ])
                     ->addLabelFor('choice', 'Class du personnage :')
                     ->addSelect('game_character',
-                        ['1' => 'Guerrier','3' => 'Sorcier'],[
-                        'class' => 'form-control', 
+                        ['1' => 'Guerrier', '2' => 'Archer', '3' => 'Sorcier'],[
+                        'class' => 'form-select', 
                         'id' => 'choice',
                         'value' => $game_character
                     ])
