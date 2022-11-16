@@ -4,9 +4,13 @@
     <div class="characters">
 
         <div class="characters__img">
-            <img src="/assets/img/home/img1.png" alt="">
+            <img src="/assets/img/home/img1.png" alt="Crono">
             <img src="/assets/img/home/img2.png" alt="">
-            <img src="/assets/img/home/img3.png" alt=""> 
+            <img src="/assets/img/home/img3.png" alt="">
+            <img src="/assets/img/home/img4.png" alt=""> 
+            <img src="/assets/img/home/img5.png" alt=""> 
+            <img src="/assets/img/home/img6.png" alt=""> 
+            <img src="/assets/img/home/img7.png" alt="">  
         </div>
 
         <div class="characters__text">

@@ -5,7 +5,7 @@
     use App\Core\Form;
     use App\Core\Constantes;
     use App\Models\GamesModel;
-    use App\Models\ZonesModel;
+    use App\Models\LocationsModel;
     use App\Models\EnemyModel;
 
     class GameController extends Controller
@@ -94,15 +94,15 @@
             return $throw;
         }
 
-        private function zone()
+        private function location()
         {
-            $zone_random = rand(1,6);
+            $location_random = rand(1,6);
 
-            $zonesModel = new ZonesModel;
+            $locationsModel = new LocationsModel;
 
-            $zone = $zonesModel->find($zone_random,'zone_id');
+            $location = $locationsModel->find($location_random,'zone_id');
 
-            return $zone;
+            return $location;
         }
 
         private function enemy()
@@ -120,11 +120,11 @@
         {
             $gameModel = new GamesModel;
 
-            $zone = $this->zone();
+            $location = $this->location();
 
             $enemy = $this->enemy();
 
-            $games = [$zone,$enemy];
+            $games = [$location,$enemy];
 
             $this->render('game/game_start', ['games' => $games], 'home', 'game');
         }
