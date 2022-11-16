@@ -77,7 +77,7 @@
                      ->addButton('Commencer', ['type' => 'submit','class' => 'btn btn-primary'])
                      ->endForm();
 
-                $this->render('game/game_start', ['form' => $form->create()],'home', 'game');
+                $this->render('game/game_create', ['form' => $form->create()],'home', 'game');
 
 
             } else {
@@ -124,9 +124,9 @@
 
             $enemy = $this->enemy();
 
-            $game = [$zone,$enemy];
+            $games = [$zone,$enemy];
 
-            $this->render('game/game_start', [], 'home', 'game');
+            $this->render('game/game_start', ['games' => $games], 'home', 'game');
         }
 
         public function continue()
