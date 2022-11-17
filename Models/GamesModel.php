@@ -7,10 +7,9 @@
 
         protected $game_id;
         protected $game_character;
-        protected $game_name_character;
-        protected $game_zone;
-        protected $game_point;
-        protected $game_score;
+        protected $game_location;
+        protected $game_save;
+        protected $create_at;
         protected $game_user_id;
         
 
@@ -20,6 +19,7 @@
         }
 
 
+        
         public function getGame_id()
         {
                 return $this->game_id;
@@ -44,50 +44,38 @@
                 return $this;
         }
 
-        public function getGame_name_character()
+        public function getGame_location()
         {
-                return $this->game_name_character;
+                return $this->game_location;
         }
 
-        public function setGame_name_character($game_name_character)
+        public function setGame_location($game_location)
         {
-                $this->game_name_character = $game_name_character;
+                $this->game_location = $game_location;
 
                 return $this;
         }
 
-        public function getGame_zone()
+        public function getGame_save()
         {
-                return $this->game_zone;
+                return $this->game_save;
         }
 
-        public function setGame_zone($game_zone)
+        public function setGame_save($game_save)
         {
-                $this->game_zone = $game_zone;
+                $this->game_save = $game_save;
 
                 return $this;
         }
 
-        public function getGame_point()
+        public function getCreate_at()
         {
-                return $this->game_point;
+                return $this->create_at;
         }
 
-        public function setGame_point($game_point)
+        public function setCreate_at($create_at)
         {
-                $this->game_point = $game_point;
-
-                return $this;
-        }
-
-        public function getGame_score()
-        {
-                return $this->game_score;
-        }
-
-        public function setGame_score($game_score)
-        {
-                $this->game_score = $game_score;
+                $this->create_at = $create_at;
 
                 return $this;
         }
@@ -104,6 +92,7 @@
                 return $this;
         }
 
+        
     }
 
 ?>

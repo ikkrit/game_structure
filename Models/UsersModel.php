@@ -11,6 +11,7 @@
         protected $email;
         protected $password;
         protected $avatar;
+        protected $create_at;
         protected $roles;
 
         public function __construct()
@@ -119,6 +120,18 @@
                 return $this;
         }
 
+        public function getCreate_at()
+        {
+                return $this->create_at;
+        }
+
+        public function setCreate_at($create_at)
+        {
+                $this->create_at = $create_at;
+
+                return $this;
+        }
+
         public function getRoles(): array
         {
                 $roles = $this->roles;
@@ -134,6 +147,7 @@
 
                 return $this;
         }
+
 
     }
 

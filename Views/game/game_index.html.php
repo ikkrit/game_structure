@@ -10,7 +10,7 @@
 
         <div class="game__menu">
             <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])): ?>
-                <li><a href="/game/create">Commencer</a></li>
+                <li><a href="/game/init">Commencer</a></li>
                 <li><a href="/game/continue">Continuer</a></li>
                 <li><a href="/game/score">Score</a></li>
             <?php else: ?>

@@ -4,6 +4,7 @@
 
     use App\Core\Form;
     use App\Core\Constantes;
+    use App\Models\CharactersModel;
     use App\Models\GamesModel;
     use App\Models\LocationsModel;
     use App\Models\EnemyModel;
@@ -15,70 +16,27 @@
             $this->render('game/game_index', [], 'home', 'game');
         }
 
-        public function create()
+        public function init()
         {
             // ON VERIFIE SI L'UTILISATEUR EST CONNECTER
             if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
                 // L'UTILISATEUR EST CONNECTER
-                // ON VERIFIE SI Le FORMULAIRE EST COMPLET
-                if(Form::validate($_POST, ['game_character', 'game_character_name'])) {
-                    // FORMULAIRE COMPLET
-                    // PROTECTION FAILLES ...
-                    $user_id = strip_tags($_SESSION['user']['id']);
-                    $game_character = strip_tags($_POST['game_character']);
-                    $game_character_name = strip_tags($_POST['game_character_name']);
 
-                    // ON INSTANCIE NOTRE MODELE
-                    $game = new GamesModel;
+                $gameModel = new GamesModel;
 
-                    // ON HYDRATE
-                    $game->setGame_user_id($user_id)
-                         ->setGame_character($game_character)
-                         ->setGame_name_character($game_character_name);
+                $game_user_id = strip_tags($_SESSION['user']['id']);
 
-                    // ON ENREGISTRE
-                    $game->create();
+                $gameModel->setGame_user_id($game_user_id);
 
-                    // REDIRECTION
-                    $_SESSION['message'] = "Votre personnage a été enregistrée avec succès";
-                    header('Location: /game/start');
-                    exit;
+                $gameModel->create();
 
-                } else {
+                $games = $gameModel->find($game_user_id, 'game_user_id');
 
-                    // LE FORMULAIRE EST INCOMPLET
-                    $_SESSION['erreur'] = !empty($_POST) ? "Le formulaire est incomplet" : '';
-                    $game_character = isset($_POST['game_character']) ? strip_tags($_POST['game_character']) : '';
-                    $game_character_name = isset($_POST['game_character_name']) ? strip_tags($_POST['game_character_name']) : '';
-                }
+                $characterModel = new CharactersModel;
 
-                $form = new Form;
+                $characters = $characterModel->find(1, 'character_id');
 
-                $form->startForm()
-                     /*->addLabelFor('choice', 'Choix du personnage :')
-                     ->addInput('text', 'game_character', [
-                        'id' => 'choice', 
-                        'class' => 'form-control',
-                        'value' => $game_character
-                    ])*/
-                    ->addLabelFor('name', 'Nom du personnage :')
-                     ->addInput('text', 'game_character_name', [
-                        'id' => 'name', 
-                        'class' => 'form-control',
-                        'value' => $game_character_name
-                    ])
-                    ->addLabelFor('choice', 'Class du personnage :')
-                    ->addSelect('game_character',
-                        ['1' => 'Guerrier', '2' => 'Archer', '3' => 'Sorcier'],[
-                        'class' => 'form-select', 
-                        'id' => 'choice',
-                        'value' => $game_character
-                    ])
-                     ->addButton('Commencer', ['type' => 'submit','class' => 'btn btn-primary'])
-                     ->endForm();
-
-                $this->render('game/game_create', ['form' => $form->create()],'home', 'game');
-
+                header('Location: /game/start/$games/$characters');
 
             } else {
                 // L'UTILISATEUR N'EST PAS CONNECTER
@@ -86,6 +44,12 @@
                 header('Location: /users/login');
                 exit;
             }
+        }
+
+        public function start($games,$characters)
+        {
+            /*$this->render('game/game_start', ['games' => $games, 'characters' => $characters],'home', 'game');*/
+            var_dump($games);
         }
 
         private function throw_dice()
@@ -116,7 +80,7 @@
             return $enemy;
         }
 
-        public function start()
+        public function startg()
         {
             $gameModel = new GamesModel;
 
