@@ -87,19 +87,6 @@
             return $enemy;
         }
 
-        public function startg()
-        {
-            $gameModel = new GamesModel;
-
-            $location = $this->location();
-
-            $enemy = $this->enemy();
-
-            $games = [$location,$enemy];
-
-            $this->render('game/game_start', ['games' => $games], 'home', 'game');
-        }
-
         public function continue()
         {
             echo "continue";

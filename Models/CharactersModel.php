@@ -5,9 +5,10 @@
     class CharactersModel extends Model
     {
         protected $character_id;
-        protected $character_class;
+        protected $character_name;
         protected $character_life;
         protected $character_weapon;
+        protected $character_element;
         protected $character_description;
         protected $character_img;
         protected $character_back;
@@ -32,14 +33,14 @@
                 return $this;
         }
 
-        public function getCharacter_class()
+        public function getCharacter_name()
         {
-                return $this->character_class;
+                return $this->character_name;
         }
 
-        public function setCharacter_class($character_class)
+        public function setCharacter_name($character_name)
         {
-                $this->character_class = $character_class;
+                $this->character_name = $character_name;
 
                 return $this;
         }
@@ -64,6 +65,18 @@
         public function setCharacter_weapon($character_weapon)
         {
                 $this->character_weapon = $character_weapon;
+
+                return $this;
+        }
+
+        public function getCharacter_element()
+        {
+                return $this->character_element;
+        }
+
+        public function setCharacter_element($character_element)
+        {
+                $this->character_element = $character_element;
 
                 return $this;
         }
@@ -106,12 +119,12 @@
 
         public function getActif()
         {
-                return $this->active;
+                return $this->actif;
         }
 
-        public function setActif($active)
+        public function setActif($actif)
         {
-                $this->active = $active;
+                $this->actif = $actif;
 
                 return $this;
         }
