@@ -1,25 +1,33 @@
-.characters__container {
-    /*display: flex;
-    flex-direction: column;
-    height: 100vh;
-    border-top: 1px solid var(--color-black);
-    align-items: center;
-    justify-content: center;*/
+.characters__content {
     display: flex;
+}
+
+.characters {
+    max-width: 1600px;
+    height: auto;
+    padding: 0 30px;
+    margin: 180px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 360px);
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    grid-gap: 100px 70px;
+}
+
+.characters__title {
+    text-align: center;
+    margin: 30px 0;
 }
 
 .characters__card {
     position: relative;
-    width: 600px;
-    height: 350px;
+    width: 400px;
+    height: 250px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-radius: var(--radius);
     background: linear-gradient(135deg,#d41e31,#491f8f);
+    box-shadow: var(--shadow-box);
 }
 
 .characters__card img {
@@ -27,20 +35,21 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 400px;
+    height: 350px;
     transition: 0.5s;
 }
 
 .characters__card:hover img {
     left: 80%;
-    height: 500px;
+    height: 380px;
 }
 
 .characters__content {
     position: relative;
+    flex-direction: column;
     width: 50%;
     left: 20%;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 10px 10px 20px;
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
@@ -55,47 +64,19 @@
 
 .characters__content h2 {
     text-transform: uppercase;
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 1em;
 }
 
 .characters__content a {
     position: relative;
+    width: 70%;
     display: inline-block;
     color: var(--color-black);
-    padding: 10px 20px;
+    padding: 10px 2px;
     border-radius: var(--radius);
     background: var(--color-white);
-    margin-top: 10px;
+    box-shadow: var(--shadow-box);
 }
 
-@media(max-width: 991px) {
-    .characters__card {
-        position: relative;
-        width: auto;
-        max-width: 600px;
-        transition: 0.5s;
-        align-items: flex-start;
-    }
-    .characters__card:hover {
-        height: 600px;
-    }
-    .characters__card:hover img {
-        left: 50%;
-        height: 350px;
-    }
-    .characters__content {
-        width: 100%;
-        left: 0;
-        padding: 40px;
-    }
-}
 
-@media(max-width: 500px) {
-    .characters__content {
-        padding: 30px;
-    }
-    .characters__card:hover img {
-        height: 300px;
-    }
-}
