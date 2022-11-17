@@ -30,13 +30,7 @@
 
                 $gameModel->create();
 
-                $games = $gameModel->find($game_user_id, 'game_user_id');
-
-                $characterModel = new CharactersModel;
-
-                $characters = $characterModel->find(1, 'character_id');
-
-                header('Location: /game/start/$games/$characters');
+                header('Location: /game/start');
 
             } else {
                 // L'UTILISATEUR N'EST PAS CONNECTER
@@ -46,27 +40,40 @@
             }
         }
 
-        public function start($games,$characters)
+        public function start()
         {
-            /*$this->render('game/game_start', ['games' => $games, 'characters' => $characters],'home', 'game');*/
-            var_dump($games);
+            if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
+
+                $game_user_id = strip_tags($_SESSION['user']['id']);
+
+                $gameModel = new GamesModel;
+
+                $games = $gameModel->find($game_user_id, 'game_user_id');
+
+                $characterModel = new CharactersModel;
+
+                $characters = $characterModel->findBy(['actif' => 1]);
+
+                $locationsModel = new LocationsModel;
+
+                $location_id = $games->game_location;
+
+                $locations = $locationsModel->find($location_id,'location_id');
+
+                $this->render('game/game_start', compact('characters','locations'), 'home', 'game');
+
+            } else {
+                // L'UTILISATEUR N'EST PAS CONNECTER
+                $_SESSION['erreur'] = "Vous devez être connecté(e) pour accéder à cette page";
+                header('Location: /users/login');
+                exit;
+            }
         }
 
         private function throw_dice()
         {
             $throw = rand(1,6);
             return $throw;
-        }
-
-        private function location()
-        {
-            $location_random = rand(1,6);
-
-            $locationsModel = new LocationsModel;
-
-            $location = $locationsModel->find($location_random,'zone_id');
-
-            return $location;
         }
 
         private function enemy()

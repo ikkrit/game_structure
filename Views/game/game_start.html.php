@@ -19,8 +19,8 @@
         <div class="start__img-3"></div>
 
         <div class="start__text-3">
-            <h2>Chapitre 1 : <span><?=$games->game_location;?></span></h2>
-            <h3><?=$characters->character_name;?></h3>
+            <h2>Chapitre 1 : <span><?=utf8_encode($locations->location_name);?></span></h2>
+            <h3><?=utf8_encode($characters[0]->character_name);?></h3>
         </div>
 
     </div>
