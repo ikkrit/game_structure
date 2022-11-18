@@ -16,6 +16,17 @@
             $this->table = 'locations';
         }
 
+        public function location(int $location_id)
+        {
+            
+             $locationsModel = new LocationsModel;
+
+             $locations = $locationsModel->find($location_id,'location_id');
+
+             return $locations;
+    
+        }
+
 
         public function getLocation_id()
         {

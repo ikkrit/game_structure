@@ -8,6 +8,7 @@
     use App\Models\GamesModel;
     use App\Models\LocationsModel;
     use App\Models\EnemyModel;
+use Exception;
 
     class GameController extends Controller
     {
@@ -30,7 +31,7 @@
 
                 $gameModel->create();
 
-                header('Location: /game/start');
+                header('Location: /game/start/4');
 
             } else {
                 // L'UTILISATEUR N'EST PAS CONNECTER
@@ -40,35 +41,40 @@
             }
         }
 
-        public function start()
+
+        public function start(int $location_id = 4)
         {
-            if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
+            /*if(gettype($location_id) != )*/
 
-                $game_user_id = strip_tags($_SESSION['user']['id']);
+            if($location_id < 1 || $location_id > 6) {$location_id = 4;} 
 
-                $gameModel = new GamesModel;
+                if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
 
-                $games = $gameModel->find($game_user_id, 'game_user_id');
-
-                $characterModel = new CharactersModel;
-
-                $characters = $characterModel->findBy(['actif' => 1]);
-
-                $locationsModel = new LocationsModel;
-
-                $location_id = $games->game_location;
-
-                $locations = $locationsModel->find($location_id,'location_id');
-
-                $this->render('game/game_start', compact('characters','locations'), 'home', 'game');
-
-            } else {
-                // L'UTILISATEUR N'EST PAS CONNECTER
-                $_SESSION['erreur'] = "Vous devez être connecté(e) pour accéder à cette page";
-                header('Location: /users/login');
-                exit;
-            }
+                    $game_user_id = strip_tags($_SESSION['user']['id']);
+    
+                    $gameModel = new GamesModel;
+    
+                    $games = $gameModel->find($game_user_id, 'game_user_id');
+    
+                    $characterModel = new CharactersModel;
+    
+                    $characters = $characterModel->findBy(['actif' => 1]);
+    
+                    $locationsModel = new LocationsModel;
+    
+                    $locations = $locationsModel->location($location_id);
+    
+                    $this->render('game/game_start', compact('characters','locations'), 'home', 'game');
+    
+                } else {
+                    // L'UTILISATEUR N'EST PAS CONNECTER
+                    $_SESSION['erreur'] = "Vous devez être connecté(e) pour accéder à cette page";
+                    header('Location: /users/login');
+                    exit;
+                }
+            
         }
+
 
         private function throw_dice()
         {
