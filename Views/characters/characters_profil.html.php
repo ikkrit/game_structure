@@ -21,11 +21,16 @@
 ?>
 
 <div class="profils__container">
-    <article>
+    <div class="profils">
 
-        <h2 class="characters__title"><?=$characters->character_name;?></h2>
-
-        <img src=<?=$characters->character_img;?> alt="<?=$characters->character_name;?>">
+        <div class="profil__title">
+            <div class="title__text">
+                <h2><?=$characters->character_name;?></h2>
+            </div>
+            <div class="title__img">
+                <img src=<?=$characters->character_img;?> alt="<?=$characters->character_name;?>">
+            </div>
+        </div>
         
         <div class="profil__life">
             <div class="life__img">
@@ -64,5 +69,5 @@
             </div>
         </div>
     
-    </article>
+    </div>
 </div>

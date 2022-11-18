@@ -7,20 +7,20 @@
         <div class="start__img-1"></div>
 
         <div class="start__text-1">
-            <p>Les maléfiques Héritiers de Kaos sont bien décidés à éradiquer tous les créateurs et ont proscrit la construction, la préparation, et la création de toutes choses. Cette funeste secte a capturé et emprisonné les bâtisseurs du monde entier afin de répandre leur doctrine de destruction. La situation paraît sans espoir, jusqu'à ce que vous, un jeune apprenti bâtisseur, parveniez à vous extirpez des griffes du mal. </p>
+            <p>Chrono Trigger se déroule dans un monde semblable à la Terre, avec des époques telles que l'ère préhistorique, dans laquelle les humains primitifs et les dinosaures partagent la terre ; le Moyen Âge , rempli de chevaliers, de monstres et de magie ; et le futur post-apocalyptique , où des humains démunis et des robots sensibles luttent pour survivre.</p>
         </div>
 
         <div class="start__img-2"></div>
 
         <div class="start__text-2">
-            <p>Après vous être échoué sur les rives de l'île de l'Éveil, vous rencontrez le fougueux Malroth, un mystérieux jeune homme atteint d'amnésie. Aidé de ce nouvel ami intrépide, vous vous lancez dans une grande aventure pour acquérir les compétences nécessaires pour devenir un véritable bâtisseur, mais la route que vous allez construire sera pavée de dangers. Vous seul pouvez vaincre les Héritiers de Kaos, découvrir les secrets du passé de Malroth, et résoudre les énigmes de cette terre mystérieuse. </p>
+            <p>Les personnages voyagent fréquemment dans le temps pour obtenir des alliés, rassembler de l'équipement et apprendre des informations pour les aider dans leur quête. </p>
         </div>
 
         <div class="start__img-3"></div>
 
         <div class="start__text-3">
-            <h2>Chapitre 1 : <span><?=utf8_encode($locations->location_name);?></span></h2>
-            <h3><?=utf8_encode($characters[0]->character_name);?></h3>
+            <h2>Chapitre 1 : <span><?=utf8_encode($locations->location_name);?></span>(<?=$locations->location_time;?> après JC)</h2>
+            <p>En 1000 après JC, le royaume de Guardia célèbre le nouveau millénaire avec une foire du millénaire. Là, Crono et Marle regardent Lucca et son père faire la démonstration de leur nouvel appareil de téléportation, le Telepod. Lorsque Marle se porte volontaire pour être téléportée, son pendentif interfère avec l'appareil, créant un portail qui l'attire.</p>
         </div>
 
     </div>

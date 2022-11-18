@@ -1,3 +1,5 @@
+/* CHARACTERS */
+
 .characters__content {
     display: flex;
 }
@@ -78,5 +80,76 @@
     background: var(--color-white);
     box-shadow: var(--shadow-box);
 }
+
+
+/* CHARACTERS PROFILS*/
+
+
+.profils__container {
+
+}
+
+.profils {
+    width: 90%;
+    margin: auto;
+}
+
+.profil__title {
+    display: flex;
+    width: 40%;
+    margin: auto;
+    justify-content: space-between;
+    padding: 15px 10px;
+    margin-top: 20px;
+}
+
+.title__text h2 {
+    font-size: 2.3rem;
+}
+
+.title__img img {
+    height: 3rem;
+}
+
+.profil__life,
+.profil__weapon,
+.profil__element,
+.profil__desc {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+}
+
+.weapon__img img {
+    height: 2rem;
+}
+
+.desc__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc__img {
+    height: 30%;
+}
+
+.desc__img img {
+    height: 350px;
+}
+
+
+@media (max-width: 991px) {
+    .profil__desc {
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+    .desc__img {
+        margin: auto;
+    }
+}
+
 
 
