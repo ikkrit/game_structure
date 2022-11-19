@@ -7,20 +7,42 @@
         <div class="start__img-1"></div>
 
         <div class="start__text-1">
-            <p>Chrono Trigger se déroule dans un monde semblable à la Terre, avec des époques telles que l'ère préhistorique, dans laquelle les humains primitifs et les dinosaures partagent la terre ; le Moyen Âge , rempli de chevaliers, de monstres et de magie ; et le futur post-apocalyptique , où des humains démunis et des robots sensibles luttent pour survivre.</p>
+
+            <h2>Chapitre 1 : <span><?=utf8_encode($locations->location_name);?></span>(<?=$locations->location_time;?> après JC)</h2>
+            <h3>La fête du millénaire</h3>
+            <p>En l'an 1000, la fête du millénaire se tient sur la place de Lynne. Lucca, une amie d'enfance de Chrono, passionnée par les machines, y présente sa dernière invention. Chrono s'y rend comme de nombreux habitants du royaume et y bouscule par mégarde une jeune fille, Marle, puis les deux jeunes gens font connaissance.</p>
         </div>
 
         <div class="start__img-2"></div>
 
         <div class="start__text-2">
-            <p>Les personnages voyagent fréquemment dans le temps pour obtenir des alliés, rassembler de l'équipement et apprendre des informations pour les aider dans leur quête. </p>
+            <p>Ils se rendent ensemble voir Lucca et son invention, un téléporteur, qui permet de se déplacer de quelques mètres. Chrono l'essaie et se retrouve téléporté instantanément d'un point à l'autre de la machine.</p>
         </div>
 
         <div class="start__img-3"></div>
 
         <div class="start__text-3">
-            <h2>Chapitre 1 : <span><?=utf8_encode($locations->location_name);?></span>(<?=$locations->location_time;?> après JC)</h2>
-            <p>En 1000 après JC, le royaume de Guardia célèbre le nouveau millénaire avec une foire du millénaire. Là, Crono et Marle regardent Lucca et son père faire la démonstration de leur nouvel appareil de téléportation, le Telepod. Lorsque Marle se porte volontaire pour être téléportée, son pendentif interfère avec l'appareil, créant un portail qui l'attire.</p>
+            <p>Mais lorsque vient le tour de Marle, le pendentif qu'elle porte se met à réagir étrangement et la jeune fille disparaît dans un vortex.<br>Chrono ramasse alors le pendentif encore présent </p>
+        </div>
+
+        <div class="start__choice">
+
+            <div class="choice__box box-main">
+                <h4>Que fais-tu ?</h4>
+            </div>
+
+            <div class="choice__box box-1">
+                <a href="/game/choice/1">Tu décide de partir la secourir et plonge dans le vortex</a>
+            </div>
+
+            <div class="choice__box box-2">
+                <a href="/game/choice/2">Tu jetes Lucca dans le vortex</a>
+            </div>
+
+            <div class="choice__box box-3">
+                <a href="/game/choice/3">Tu rentre chez toi aller dormir...</a>
+            </div>
+
         </div>
 
     </div>

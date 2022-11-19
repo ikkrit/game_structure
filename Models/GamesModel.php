@@ -18,6 +18,12 @@
             $this->table = 'game';
         }
 
+        public function throw_dice()
+        {
+            $throw = rand(1,6);
+            return $throw;
+        }
+
 
         
         public function getGame_id()

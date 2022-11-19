@@ -75,23 +75,26 @@ use Exception;
             
         }
 
-
-        private function throw_dice()
+        public function choice(int $choice)
         {
-            $throw = rand(1,6);
-            return $throw;
+            $party = "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem";
+
+            switch($choice) {
+                case 1:
+                    $this->render('game/game_party', ['party' => $party], 'home', 'game');
+                    break;
+                case 2:
+                    $this->render('game/game_lose', ['party' => $party], 'home', 'game');
+                    break;
+                case 3:
+                    $this->render('game/game_lose', ['party' => $party], 'home', 'game');
+                    break;
+                default:
+                    $this->render('game/game_party', ['party' => $party], 'home', 'game');
+            }
+            
         }
 
-        private function enemy()
-        {
-            $enemy_random = rand(1,6);
-
-            $enemyModel = new EnemyModel;
-    
-            $enemy = $enemyModel->find($enemy_random,'enemy_id');
-
-            return $enemy;
-        }
 
         public function continue()
         {

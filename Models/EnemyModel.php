@@ -15,6 +15,17 @@
             $this->table = 'enemy';
         }
 
+        public function enemy()
+        {
+            $enemy_random = rand(1,6);
+
+            $enemyModel = new EnemyModel;
+    
+            $enemy = $enemyModel->find($enemy_random,'enemy_id');
+
+            return $enemy;
+        }
+
 
         public function getEnemy_id()
         {
