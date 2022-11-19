@@ -11,6 +11,10 @@
         protected $game_save;
         protected $create_at;
         protected $game_user_id;
+
+        const CHAP_1_BAD1 = "L'idée est bonne, mais c'est toi le hero de l'histoire...";
+        const CHAP_1_BAD2 = "Mauvais choix.. Tu veux pas jouer ou quoi ??";
+        const CHAP_1_ERROR = "Etrange t'on choix...";
         
 
         public function __construct()

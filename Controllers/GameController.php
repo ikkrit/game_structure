@@ -3,7 +3,6 @@
     namespace App\Controllers;
 
     use App\Core\Form;
-    use App\Core\Constantes;
     use App\Models\CharactersModel;
     use App\Models\GamesModel;
     use App\Models\LocationsModel;
@@ -77,20 +76,20 @@ use Exception;
 
         public function choice(int $choice)
         {
-            $party = "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem";
+            $gameModel = new GamesModel;
 
             switch($choice) {
                 case 1:
-                    $this->render('game/game_party', ['party' => $party], 'home', 'game');
+                    $this->render('game/game_party', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
                     break;
                 case 2:
-                    $this->render('game/game_lose', ['party' => $party], 'home', 'game');
+                    $this->render('game/game_lose', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
                     break;
                 case 3:
-                    $this->render('game/game_lose', ['party' => $party], 'home', 'game');
+                    $this->render('game/game_lose', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
                     break;
                 default:
-                    $this->render('game/game_party', ['party' => $party], 'home', 'game');
+                    $this->render('game/game_party', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
             }
             
         }
