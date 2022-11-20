@@ -75,13 +75,16 @@
             
         }
 
-        public function choice(string $chapitre,int $choice)
+        public function choice(string $chapitre,int $zone, int $choice)
         {
+            $chapitre = strip_tags($chapitre);
+            $choice = strip_tags($choice);
+
             $gameModel = new GamesModel;
-            $page = $gameModel->page_select();
-            $page = 
-            $constants = ConstantsGameChapOne::CHAP_1_BAD1;
-            $this->render("game/$page", ['party' => $constants], 'home', 'game');
+
+            $chapitre_choice = $gameModel->chapitre_select($chapitre, $zone ,$choice);
+        
+            $this->render("game/$chapitre_choice[1]", ['party' => $chapitre_choice[0]], 'home', 'game');
         }
 
 

@@ -2,6 +2,8 @@
 
     namespace App\Models;
 
+use App\Core\Constants\ConstantsGameChapOne;
+
     class GamesModel extends Model
     {
 
@@ -18,39 +20,120 @@
             $this->table = 'game';
         }
 
-        public function chapitre_one($action)
+
+        public function chapitre_one(int $zone, int $choice)
+        {
+            if($zone == 1) {
+
+                if($choice == 1) {
+                        $constants = ConstantsGameChapOne::CHAP_01_01;
+                        $page = "game_party";
+                } elseif($choice == 2) {
+                        $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                        $page = "game_lose";
+                } elseif($choice == 3) {
+                        $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                        $page = "game_lose";
+                } else {
+                        $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                        $page = "game_lose";
+                }
+            }
+            elseif($zone == 2) {
+
+                if($choice == 1) {
+                        $constants = ConstantsGameChapOne::CHAP_01_01;
+                        $page = "game_party";
+                } elseif($choice == 2) {
+                        $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                        $page = "game_lose";
+                } elseif($choice == 3) {
+                        $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                        $page = "game_lose";
+                } else {
+                        $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                        $page = "game_lose";
+                }
+            } 
+            elseif($zone == 3) {
+
+                if($choice == 1) {
+                        $constants = ConstantsGameChapOne::CHAP_01_01;
+                        $page = "game_party";
+                } elseif($choice == 2) {
+                        $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                        $page = "game_lose";
+                } elseif($choice == 3) {
+                        $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                        $page = "game_lose";
+                } else {
+                        $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                        $page = "game_lose";
+                }
+                
+            } else {
+                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                $page = "game_lose";
+            }
+
+            $chapitre_one = [$constants,$page];
+
+            return $chapitre_one;
+            
+        }
+
+        public function chapitre_two(int $zone, int $choice)
         {
             echo "two";
         }
 
-        public function chapitre_two($action)
-        {
-            echo "two";
-        }
-
-        public function chapitre_three($action)
+        public function chapitre_three(int $zone, int $choice)
         {
             echo "three";
         }
 
-        public function chapitre_four($action)
+        public function chapitre_four(int $zone, int $choice)
         {
             echo "four";
         }
 
-        public function chapitre_five($action)
+        public function chapitre_five(int $zone, int $choice)
         {
             echo "five";
         }
 
-        public function chapitre_final($action)
+        public function chapitre_final(int $zone, int $choice)
         {
             echo "final";
         }
 
-        public function page_select($select)
+        public function chapitre_select(string $chapitre_select, int $zone, int $choice)
         {
-            $sel = GamesModel::chapitre_final($select);
+            switch($chapitre_select) {
+                case "one":
+                        $chapitre_select = $this->chapitre_one($zone, $choice);
+                        break;
+                case "two":
+                        $chapitre_select = $this->chapitre_two($zone, $choice);
+                         break;
+                case "three":
+                        $chapitre_select = $this->chapitre_three($zone, $choice);
+                        break;
+                case "four":
+                        $chapitre_select = $this->chapitre_four($zone, $choice);
+                        break;
+                case "five":
+                        $chapitre_select = $this->chapitre_one($zone, $choice);
+                        break;
+                case "final";
+                        $chapitre_select = $this->chapitre_final($zone, $choice);
+                        break;
+                default:
+                        $chapitre_select = $this->chapitre_one($zone, $choice);
+
+            }
+
+            return $chapitre_select;
         }
 
         public function throw_dice()
