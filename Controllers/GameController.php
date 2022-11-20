@@ -77,12 +77,13 @@
 
         public function choice(string $chapitre,int $zone, int $choice)
         {
-            $chapitre = strip_tags($chapitre);
-            $choice = strip_tags($choice);
+            $choice_chapitre = strip_tags($chapitre);
+            $choice_choice = strip_tags($choice);
+            $choice_zone = strip_tags($choice);
 
             $gameModel = new GamesModel;
 
-            $chapitre_choice = $gameModel->chapitre_select($chapitre, $zone ,$choice);
+            $chapitre_choice = $gameModel->chapitre_select($choice_chapitre,$choice_choice ,$choice_zone);
         
             $this->render("game/$chapitre_choice[1]", ['party' => $chapitre_choice[0]], 'home', 'game');
         }

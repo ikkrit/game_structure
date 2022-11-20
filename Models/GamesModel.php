@@ -2,7 +2,7 @@
 
     namespace App\Models;
 
-use App\Core\Constants\ConstantsGameChapOne;
+    use App\Core\Constants\ConstantsGameChapOne;
 
     class GamesModel extends Model
     {
