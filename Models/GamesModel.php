@@ -11,15 +11,46 @@
         protected $game_save;
         protected $create_at;
         protected $game_user_id;
-
-        const CHAP_1_BAD1 = "L'idée est bonne, mais c'est toi le hero de l'histoire...";
-        const CHAP_1_BAD2 = "Mauvais choix.. Tu veux pas jouer ou quoi ??";
-        const CHAP_1_ERROR = "Etrange t'on choix...";
         
 
         public function __construct()
         {
             $this->table = 'game';
+        }
+
+        public function chapitre_one($action)
+        {
+            echo "two";
+        }
+
+        public function chapitre_two($action)
+        {
+            echo "two";
+        }
+
+        public function chapitre_three($action)
+        {
+            echo "three";
+        }
+
+        public function chapitre_four($action)
+        {
+            echo "four";
+        }
+
+        public function chapitre_five($action)
+        {
+            echo "five";
+        }
+
+        public function chapitre_final($action)
+        {
+            echo "final";
+        }
+
+        public function page_select($select)
+        {
+            $sel = GamesModel::chapitre_final($select);
         }
 
         public function throw_dice()
@@ -29,7 +60,6 @@
         }
 
 
-        
         public function getGame_id()
         {
                 return $this->game_id;

@@ -3,11 +3,12 @@
     namespace App\Controllers;
 
     use App\Core\Form;
+    use App\Core\Constants;
+    use App\Core\Constants\ConstantsGameChapOne;
     use App\Models\CharactersModel;
     use App\Models\GamesModel;
     use App\Models\LocationsModel;
     use App\Models\EnemyModel;
-use Exception;
 
     class GameController extends Controller
     {
@@ -74,24 +75,13 @@ use Exception;
             
         }
 
-        public function choice(int $choice)
+        public function choice(string $chapitre,int $choice)
         {
             $gameModel = new GamesModel;
-
-            switch($choice) {
-                case 1:
-                    $this->render('game/game_party', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
-                    break;
-                case 2:
-                    $this->render('game/game_lose', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
-                    break;
-                case 3:
-                    $this->render('game/game_lose', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
-                    break;
-                default:
-                    $this->render('game/game_party', ['party' => $gameModel::CHAP_1_BAD1], 'home', 'game');
-            }
-            
+            $page = $gameModel->page_select();
+            $page = 
+            $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+            $this->render("game/$page", ['party' => $constants], 'home', 'game');
         }
 
 
