@@ -15,13 +15,14 @@
             $this->table = 'enemy';
         }
 
-        public function enemy()
+        public function enemy(int $locations)
         {
-            $enemy_random = rand(1,6);
-
-            $enemyModel = new EnemyModel;
     
-            $enemy = $enemyModel->find($enemy_random,'enemy_id');
+            $enemy_locations = $this->findBy(['zone_id' => $locations]);
+
+            $enemy_random = array_rand($enemy_locations);
+
+            $enemy = $this->find($enemy_random, 'enemy_id');
 
             return $enemy;
         }

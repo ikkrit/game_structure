@@ -134,6 +134,10 @@
             return $throw;
         }
 
+        public function battle(int $characters, int $enemy)
+        {
+
+        }
 
         public function getGame_id()
         {
