@@ -97,11 +97,6 @@
             echo "four";
         }
 
-        public function chapitre_five(int $zone, int $choice)
-        {
-            echo "five";
-        }
-
         public function chapitre_final(int $zone, int $choice)
         {
             echo "final";
@@ -121,9 +116,6 @@
                         break;
                 case "four":
                         $chapitre_select = $this->chapitre_four($zone, $choice);
-                        break;
-                case "five":
-                        $chapitre_select = $this->chapitre_one($zone, $choice);
                         break;
                 case "final";
                         $chapitre_select = $this->chapitre_final($zone, $choice);
