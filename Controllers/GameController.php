@@ -81,6 +81,10 @@
             $choice_choice = strip_tags($choice);
             $choice_zone = strip_tags($choice);
 
+            $enemy = new EnemyModel;
+            $enemy_random = $enemy->enemy($choice_zone);
+            var_dump($enemy_random);die;
+
             $gameModel = new GamesModel;
 
             $chapitre_choice = $gameModel->chapitre_select($choice_chapitre,$choice_choice ,$choice_zone);

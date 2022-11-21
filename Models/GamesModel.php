@@ -134,9 +134,14 @@
             return $throw;
         }
 
-        public function battle(int $characters, int $enemy)
+        public function battle(CharactersModel $character_battle, EnemyModel $enemy_battle)
         {
+            $character = $character_battle->character_life;
+            $enemy = $enemy_battle->enemy_life;
 
+            while($character > 1 || $enemy > 1) {
+                echo "<div class 'battle_box'></div>";
+            }
         }
 
         public function getGame_id()

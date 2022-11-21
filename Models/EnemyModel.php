@@ -17,7 +17,6 @@
 
         public function enemy(int $locations)
         {
-    
             $enemy_locations = $this->findBy(['zone_id' => $locations]);
 
             $enemy_random = array_rand($enemy_locations);
