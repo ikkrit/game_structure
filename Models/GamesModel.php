@@ -134,13 +134,20 @@
             return $throw;
         }
 
-        public function battle(CharactersModel $character_battle, EnemyModel $enemy_battle)
+        public function battle($character_battle, $enemy_battle)
         {
-            $character = $character_battle->character_life;
-            $enemy = $enemy_battle->enemy_life;
+            $character_name = $character_battle->character_name;
+            $character_point = $character_battle->character_life;
 
-            while($character > 1 || $enemy > 1) {
-                echo "<div class 'battle_box'></div>";
+            $enemy_name = $enemy_battle->enemy_name;
+            $enemy_point = $enemy_battle->enemy_life;
+
+            while(($character_point > 1 ) || $enemy_point > 1) {
+                echo "<div class 'battle_box'>$character_name à $character_point de point de vie</div>";
+                $character_point -= 20;
+                
+                $enemy_point -= 20;
+               
             }
         }
 

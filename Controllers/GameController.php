@@ -78,14 +78,20 @@
         public function choice(string $chapitre,int $zone, int $choice)
         {
             $choice_chapitre = strip_tags($chapitre);
+            $choice_zone = strip_tags($zone);
             $choice_choice = strip_tags($choice);
-            $choice_zone = strip_tags($choice);
 
             $enemy = new EnemyModel;
             $enemy_random = $enemy->enemy($choice_zone);
-            var_dump($enemy_random);die;
+
+            $characters = new CharactersModel;
+            $character_player = $characters->find(1, 'character_id');
 
             $gameModel = new GamesModel;
+
+            $battle = $gameModel->battle($character_player, $enemy_random);
+            var_dump($battle);die;
+
 
             $chapitre_choice = $gameModel->chapitre_select($choice_chapitre,$choice_choice ,$choice_zone);
         
