@@ -85,11 +85,16 @@
             $enemy_random = $enemy->enemy($choice_zone);
 
             $characters = new CharactersModel;
-            $character_player = $characters->find(1, 'character_id');
+            $character_player1 = $characters->find(1, 'character_id');
+            $character_player2 = $characters->find(2, 'character_id');
+            $character_player3 = $characters->find(3, 'character_id');
 
             $gameModel = new GamesModel;
 
-            $battle = $gameModel->battle($character_player, $enemy_random);
+            $battle = $gameModel->battle_character($character_player1,$character_player2,$character_player3);
+            var_dump($battle);die;
+
+            $battle = $gameModel->battle_action($character_player, $enemy_random);
             var_dump($battle);die;
 
 

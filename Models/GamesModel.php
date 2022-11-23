@@ -134,13 +134,47 @@
             return $throw;
         }
 
-        public function battle($character_battle, $enemy_battle)
+        public function battle_character($character_one, $character_two = null, $character_three = null)
         {
-            $character_name = $character_battle->character_name;
-            $character_point = $character_battle->character_life;
+            $battle_character = array($character_one);
+            if($character_two != null)
+                $battle_character = array($character_one,$character_two);
+            if($character_three != null)
+                $battle_character = array($character_one,$character_two,$character_three);
 
-            $enemy_name = $enemy_battle->enemy_name;
-            $enemy_point = $enemy_battle->enemy_life;
+            return $battle_character;
+        }
+
+        public function battle_enemy($enemy_one, $enemy_two = null, $enemy_three = null)
+        {
+            $battle_enemy = array($enemy_one);
+            if($enemy_two != null)
+                $battle_enemy = array($enemy_one,$enemy_two);
+            if($enemy_three != null)
+                $battle_enemy = array($enemy_one,$enemy_two,$enemy_three);
+
+            return $battle_enemy;
+        }
+
+        public function battle_action($character_battles, $enemy_battles)
+        {
+            foreach($character_battles as $character_battle) {
+                $character_name_one = $character_battle[0]->character_name;
+                $character_point_one = $character_battle[0]->character_life;
+                $character_attack_one = $character_battle[0]->character_attack;
+                if($character_battle[1]) {
+                     $character_name_two = $character_battle[1]->character_name;
+                     $character_point_two = $character_battle[1]->character_life;
+                     $character_attack_two = $character_battle[1]->character_attack;
+                }
+            }
+
+            foreach($enemy_battles as $enemy_battle) {
+                $enemy_name = $enemy_battle[0]->enemy_name;
+                $enemy_point = $enemy_battle[0]->enemy_life;
+                $enemy_attack = $enemy_battle[0]->enemy_attack;
+            }
+            
 
             while(($character_point > 1 ) || $enemy_point > 1) {
                 echo "<div class 'battle_box'>$character_name à $character_point de point de vie</div>";
