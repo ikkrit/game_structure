@@ -136,51 +136,55 @@
 
         public function battle_character($character_one, $character_two = null, $character_three = null)
         {
-            $battle_character = array($character_one);
+            $battle_character = array();
+
+            $battle_character[] = $character_one;
+
             if($character_two != null)
-                $battle_character = array($character_one,$character_two);
+                $battle_character[] = $character_two;
             if($character_three != null)
-                $battle_character = array($character_one,$character_two,$character_three);
+                $battle_character[] = $character_three;
 
             return $battle_character;
         }
 
         public function battle_enemy($enemy_one, $enemy_two = null, $enemy_three = null)
         {
-            $battle_enemy = array($enemy_one);
-            if($enemy_two != null)
-                $battle_enemy = array($enemy_one,$enemy_two);
-            if($enemy_three != null)
-                $battle_enemy = array($enemy_one,$enemy_two,$enemy_three);
+            $battle_enemy = array();
+
+            $battle_enemy[] = $enemy_one;
+
+            if($enemy_two != null) {$battle_enemy[] = $enemy_two;}
+            if($enemy_three != null) {$battle_enemy[] = $enemy_three;}
 
             return $battle_enemy;
         }
 
-        public function battle_action($character_battles, $enemy_battles)
+        public function battle_action($character_battle, $enemy_battle)
         {
-            foreach($character_battles as $character_battle) {
-                $character_name_one = $character_battle[0]->character_name;
-                $character_point_one = $character_battle[0]->character_life;
-                $character_attack_one = $character_battle[0]->character_attack;
-                if($character_battle[1]) {
-                     $character_name_two = $character_battle[1]->character_name;
-                     $character_point_two = $character_battle[1]->character_life;
-                     $character_attack_two = $character_battle[1]->character_attack;
-                }
-            }
+                $characters = array();
 
-            foreach($enemy_battles as $enemy_battle) {
-                $enemy_name = $enemy_battle[0]->enemy_name;
-                $enemy_point = $enemy_battle[0]->enemy_life;
-                $enemy_attack = $enemy_battle[0]->enemy_attack;
-            }
-            
+                $characters[] = $character_battle[0];
 
-            while(($character_point > 1 ) || $enemy_point > 1) {
-                echo "<div class 'battle_box'>$character_name à $character_point de point de vie</div>";
-                $character_point -= 20;
+                if($character_battle[1]) {$characters[] = $character_battle[1];}
+                if($character_battle[2]) {$characters[] = $character_battle[2];}
+
+                $enemy = array();
+
+                $enemy[] = $enemy_battle[0];
+
+                if($enemy_battle[1]) {$enemy[] = $enemy_battle[1];}
+                if($enemy_battle[2]) {$enemy[] = $enemy_battle[2];}
+
+
+                while(($characters[0]->character_life > 1 ) || $enemy[0]->enemy_life > 1) {
+
+                         $characters[0]->character_life -= $enemy[0]->enemy_attack;
+
+                        echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";
+                        $characters[0]->character_life -= 20;
                 
-                $enemy_point -= 20;
+                        $enemy[0]->enemy_life -= 20;
                
             }
         }

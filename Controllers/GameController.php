@@ -82,22 +82,26 @@
             $choice_choice = strip_tags($choice);
 
             $enemy = new EnemyModel;
-            $enemy_random = $enemy->enemy($choice_zone);
+
+            $enemy_random1 = $enemy->enemy($choice_zone);
+            $enemy_random2 = $enemy->enemy($choice_zone);
+            $enemy_random3 = $enemy->enemy($choice_zone);
+            
 
             $characters = new CharactersModel;
+
             $character_player1 = $characters->find(1, 'character_id');
             $character_player2 = $characters->find(2, 'character_id');
             $character_player3 = $characters->find(3, 'character_id');
 
             $gameModel = new GamesModel;
 
-            $battle = $gameModel->battle_character($character_player1,$character_player2,$character_player3);
-            var_dump($battle);die;
-
-            $battle = $gameModel->battle_action($character_player, $enemy_random);
-            var_dump($battle);die;
-
-
+            $battle_characters = $gameModel->battle_character($character_player1,$character_player2,$character_player3);
+            
+            $battle_enemy = $gameModel->battle_enemy($enemy_random1, $enemy_random2, $enemy_random3);
+            
+            $battle = $gameModel->battle_action($battle_characters, $battle_enemy);
+            
             $chapitre_choice = $gameModel->chapitre_select($choice_chapitre,$choice_choice ,$choice_zone);
         
             $this->render("game/$chapitre_choice[1]", ['party' => $chapitre_choice[0]], 'home', 'game');
