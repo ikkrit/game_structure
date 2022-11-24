@@ -98,7 +98,7 @@
 
             $battle_characters = $gameModel->battle_character($character_player1,$character_player2,$character_player3);
             
-            $battle_enemy = $gameModel->battle_enemy($enemy_random1, $enemy_random2);
+            $battle_enemy = $gameModel->battle_enemy($enemy_random1, $enemy_random2, $enemy_random3);
             
             
             $battle = $gameModel->battle_action($battle_characters, $battle_enemy);

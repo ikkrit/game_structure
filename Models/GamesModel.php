@@ -164,27 +164,16 @@
         {
                 $characters = array();
 
-                $characters[] = $character_battle[0];
-
-                if($character_battle[1]) {$characters[] = $character_battle[1];}
-                if($character_battle[2]) {$characters[] = $character_battle[2];}
-
-                for($i = 0; $i < count($enemy_battle); $i++) {
-                        $enemy_battle[$i];
+                for($i = 0; $i < count($character_battle); $i++) {
+                        $characters[] = $character_battle[$i];
                 }
-                var_dump($enemy_battle[1]);
-                die;
 
                 $enemy = array();
 
-                $enemy[] = $enemy_battle[0];
-
-                $enemy_battle[1] ? $enemy[] = $enemy_battle[1] : false;
-                $enemy_battle[2] ? $enemy[] = $enemy_battle[2] : false;
-
-                for($i = 0; $i < count($enemy); $i++) {
-                        var_dump($i);
+                for($i = 0; $i < count($enemy_battle); $i++) {
+                        $enemy[] = $enemy_battle[$i];
                 }
+
                 die;
 
                 $battle = false;
