@@ -19,7 +19,7 @@
         {
             $enemy_locations = $this->findBy(['zone_id' => $locations]);
 
-            $enemy_random = array_rand($enemy_locations);
+            $enemy_random = array_rand($enemy_locations)+1;
 
             $enemy = $this->find($enemy_random, 'enemy_id');
 

@@ -169,23 +169,36 @@
                 if($character_battle[1]) {$characters[] = $character_battle[1];}
                 if($character_battle[2]) {$characters[] = $character_battle[2];}
 
+                for($i = 0; $i < count($enemy_battle); $i++) {
+                        $enemy_battle[$i];
+                }
+                var_dump($enemy_battle[1]);
+                die;
+
                 $enemy = array();
 
                 $enemy[] = $enemy_battle[0];
 
-                if($enemy_battle[1]) {$enemy[] = $enemy_battle[1];}
-                if($enemy_battle[2]) {$enemy[] = $enemy_battle[2];}
+                $enemy_battle[1] ? $enemy[] = $enemy_battle[1] : false;
+                $enemy_battle[2] ? $enemy[] = $enemy_battle[2] : false;
 
+                for($i = 0; $i < count($enemy); $i++) {
+                        var_dump($i);
+                }
+                die;
 
-                while(($characters[0]->character_life > 1 ) || $enemy[0]->enemy_life > 1) {
+                $battle = false;
 
-                         $characters[0]->character_life -= $enemy[0]->enemy_attack;
+                while($battle = false) {
 
+                        if($enemy[0]->enemy_life > 0) {
+
+                        }
+                        while(($enemy[0]->enemy_life) > 0) {
+                                $enemy[0]->enemy_attack -= $characters[0]->character_life;
+                            echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";
+                        }
                         echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";
-                        $characters[0]->character_life -= 20;
-                
-                        $enemy[0]->enemy_life -= 20;
-               
             }
         }
 
