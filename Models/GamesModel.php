@@ -162,33 +162,48 @@
 
         public function battle_action($character_battle, $enemy_battle)
         {
+                // RECUP DES CHARACTERS
                 $characters = array();
 
                 for($i = 0; $i < count($character_battle); $i++) {
                         $characters[] = $character_battle[$i];
                 }
 
+                // RECUP DES ENEMY
                 $enemy = array();
 
                 for($i = 0; $i < count($enemy_battle); $i++) {
                         $enemy[] = $enemy_battle[$i];
                 }
+                
+                // BOUCLE DU COMBAT
 
-                die;
+                $battle_order_characters = $characters[rand(0,count($characters)-1)];
+                $battle_order_enemy = $enemy[rand(0,count($enemy)-1)];
 
                 $battle = false;
 
-                while($battle = false) {
+                while($battle == false) {
 
-                        if($enemy[0]->enemy_life > 0) {
+                    if($battle_order_characters->character_life > 0) {
+                        if($battle_order_enemy->enemy_life > 0) {
+                            echo "<div class='battle__start battle__box'>
+                                        {$battle_order_characters->character_name} Attaque {$battle_order_enemy->enemy_name}
+                                </div>";
+                            echo "<div class='battle__action battle__box'>
+                                        {$battle_order_enemy->enemy_name} reçois {$battle_order_enemy->enemy_life} de degat
+                                </div>";
 
+                            die;
                         }
-                        while(($enemy[0]->enemy_life) > 0) {
-                                $enemy[0]->enemy_attack -= $characters[0]->character_life;
+                    }
+                    /*while(($enemy[0]->enemy_life) > 0) {
+                        $enemy[0]->enemy_attack -= $characters[0]->character_life;
                             echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";
-                        }
-                        echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";
-            }
+                    }
+                        
+                    echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";*/
+                }
         }
 
         public function getGame_id()
