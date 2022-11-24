@@ -81,25 +81,11 @@
             $choice_zone = strip_tags($zone);
             $choice_choice = strip_tags($choice);
 
-            $enemy = new EnemyModel;
-
-            $enemy_random1 = $enemy->enemy($choice_zone);
-            $enemy_random2 = $enemy->enemy($choice_zone);
-            $enemy_random3 = $enemy->enemy($choice_zone);
-            
-
-            $characters = new CharactersModel;
-
-            $character_player1 = $characters->find(1, 'character_id');
-            $character_player2 = $characters->find(2, 'character_id');
-            $character_player3 = $characters->find(3, 'character_id');
-
             $gameModel = new GamesModel;
 
             $battle_characters = $gameModel->battle_character($character_player1,$character_player2,$character_player3);
             
             $battle_enemy = $gameModel->battle_enemy($enemy_random1, $enemy_random2, $enemy_random3);
-            
             
             $battle = $gameModel->battle_action($battle_characters, $battle_enemy);
             
@@ -108,6 +94,23 @@
             $this->render("game/$chapitre_choice[1]", ['party' => $chapitre_choice[0]], 'home', 'game');
         }
 
+        public function battle(int $zone)
+        {
+            $zone = strip_tags($zone);
+            $enemy = new EnemyModel;
+
+            $enemy_random1 = $enemy->enemy($zone);
+            $enemy_random2 = $enemy->enemy($zone);
+            $enemy_random3 = $enemy->enemy($zone);
+            
+
+            $characters = new CharactersModel;
+
+            $character_player1 = $characters->find(1, 'character_id');
+            $character_player2 = $characters->find(2, 'character_id');
+            $character_player3 = $characters->find(3, 'character_id');
+
+        }
 
         public function continue()
         {

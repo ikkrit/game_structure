@@ -128,11 +128,15 @@
             return $chapitre_select;
         }
 
+        // LANCER DE DES
+
         public function throw_dice()
         {
             $throw = rand(1,6);
             return $throw;
         }
+
+        // CHARACTER INIT
 
         public function battle_character($character_one, $character_two = null, $character_three = null)
         {
@@ -145,8 +149,16 @@
             if($character_three != null)
                 $battle_character[] = $character_three;
 
-            return $battle_character;
+            // RECUP DES CHARACTERS
+
+            for($i = 0; $i < count($battle_character); $i++) {
+                    $characters[] = $battle_character[$i];
+            }
+
+            return $characters;
         }
+
+        // ENEMY INIT
 
         public function battle_enemy($enemy_one, $enemy_two = null, $enemy_three = null)
         {
@@ -157,29 +169,33 @@
             if($enemy_two != null) {$battle_enemy[] = $enemy_two;}
             if($enemy_three != null) {$battle_enemy[] = $enemy_three;}
 
-            return $battle_enemy;
+            // RECUP DES ENEMY
+
+            for($i = 0; $i < count($battle_enemy); $i++) {
+                $enemy[] = $battle_enemy[$i];
+            }
+
+            return $enemy;
+        }
+
+        public function degats($character, $enemy, int $action)
+        {
+                if($action == 1) {
+                        
+                }
         }
 
         public function battle_action($character_battle, $enemy_battle)
         {
-                // RECUP DES CHARACTERS
-                $characters = array();
-
-                for($i = 0; $i < count($character_battle); $i++) {
-                        $characters[] = $character_battle[$i];
-                }
-
-                // RECUP DES ENEMY
-                $enemy = array();
-
-                for($i = 0; $i < count($enemy_battle); $i++) {
-                        $enemy[] = $enemy_battle[$i];
-                }
                 
                 // BOUCLE DU COMBAT
 
-                $battle_order_characters = $characters[rand(0,count($characters)-1)];
-                $battle_order_enemy = $enemy[rand(0,count($enemy)-1)];
+                // CHARACTERS
+                $battle_order_characters = $character_battle[rand(0,count($character_battle)-1)];
+
+                // ENEMY
+                $battle_order_enemy = $enemy_battle[rand(0,count($enemy_battle)-1)];
+
 
                 $battle = false;
 
@@ -191,7 +207,7 @@
                                         {$battle_order_characters->character_name} Attaque {$battle_order_enemy->enemy_name}
                                 </div>";
                             echo "<div class='battle__action battle__box'>
-                                        {$battle_order_enemy->enemy_name} reçois {$battle_order_enemy->enemy_life} de degat
+                                        {$battle_order_enemy->enemy_name} reçois {$battle_order_enemy->enemy_life} de degats
                                 </div>";
 
                             die;
