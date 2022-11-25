@@ -111,6 +111,11 @@
             
             $battle_enemy = $gameModel->battle_enemy($enemy_random1, $enemy_random2, $enemy_random3);
 
+
+            $action = $gameModel->degats($battle_characters,$battle_enemy,1,$gameModel->throw_dice());
+
+            var_dump($action);die;
+
         }
 
         public function continue()

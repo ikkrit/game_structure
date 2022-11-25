@@ -180,14 +180,18 @@
 
         public function degats($character, $enemy, int $actions, int $dice )
         {
+                for($i = 0; $i < count($character); $i++) {
+                        $compt = $i;
+                }
+                var_dump($compt);die;
+
                 if($actions == 1) {
-                        $action = $enemy->enemy_attack - ($character->character_life * $dice);
+                        $degats[] = $enemy[$compt]->enemy_attack - ($character[$compt]->character_life * $dice);
                 } else {
-                        $action = $character->character_attack - ($enemy->enemy_attack * $dice);
+                        $degats[] = $character[$compt]->character_attack - ($enemy[$compt]->enemy_attack * $dice);
                 }
 
-                return $action;
-                
+                return $degats;  
         }
 
         public function battle_action($character_battle, $enemy_battle)
