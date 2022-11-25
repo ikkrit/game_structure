@@ -178,11 +178,16 @@
             return $enemy;
         }
 
-        public function degats($character, $enemy, int $action)
+        public function degats($character, $enemy, int $actions, int $dice )
         {
-                if($action == 1) {
-                        
+                if($actions == 1) {
+                        $action = $enemy->enemy_attack - ($character->character_life * $dice);
+                } else {
+                        $action = $character->character_attack - ($enemy->enemy_attack * $dice);
                 }
+
+                return $action;
+                
         }
 
         public function battle_action($character_battle, $enemy_battle)
