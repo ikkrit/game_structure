@@ -114,7 +114,7 @@
 
             $action = $gameModel->degats($battle_characters,$battle_enemy,1,$gameModel->throw_dice());
 
-            var_dump($action);die;
+            
 
         }
 

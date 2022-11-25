@@ -178,19 +178,21 @@
             return $enemy;
         }
 
-        public function degats($character, $enemy, int $actions, int $dice )
+        public function degats($characters, $enemy, int $actions, int $dice )
         {
-                for($i = 0; $i < count($character); $i++) {
-                        $compt = $i;
-                }
-                var_dump($compt);die;
+                $characters_number = count($characters);
+                $enemy_number = count($enemy);
 
                 if($actions == 1) {
-                        $degats[] = $enemy[$compt]->enemy_attack - ($character[$compt]->character_life * $dice);
+                        $degats = $enemy->enemy_attack - ($characters->character_life * $dice);
+                } elseif($actions == 2) {
+                        $degats = $characters->character_attack - ($enemy->enemy_attack * $dice);
                 } else {
-                        $degats[] = $character[$compt]->character_attack - ($enemy[$compt]->enemy_attack * $dice);
+                        return false;
                 }
 
+                var_dump($degats);die;
+                
                 return $degats;  
         }
 
