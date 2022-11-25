@@ -178,10 +178,22 @@
             return $enemy;
         }
 
+
+        public function battle_turn($characters, $enemy)
+        {
+                for($character_number = 0; $character_number < count($characters); $character_number++) {
+                        $chara = $characters[$character_number];
+                        for($enemy_number = 0; $enemy_number < $character_number; $enemy_number++) {
+                                $ene = $enemy[$enemy_number];
+                                
+                                le code de combat 3 contre 3;
+                        }
+                }
+                die;
+        }
+
         public function degats($characters, $enemy, int $actions, int $dice )
         {
-                $characters_number = count($characters);
-                $enemy_number = count($enemy);
 
                 if($actions == 1) {
                         $degats = $enemy->enemy_attack - ($characters->character_life * $dice);
