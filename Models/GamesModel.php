@@ -188,6 +188,7 @@
                         if($character_actif->character_life > 0) {
 
                                 $character_turn = $characters[$character_number];
+                                var_dump($character_turn);die;
 
                                 for($enemy_number = 0; $enemy_number < $character_number; $enemy_number++) {
 
@@ -195,7 +196,7 @@
 
                                         if($enemy_life->enemy_life > 0) {
                                                 
-                                                $enemy_turn[] = $enemy[$enemy_number];
+                                                $enemy_turn = $enemy[$enemy_number];
                                                 var_dump($enemy_turn);
 
                                         } else {
