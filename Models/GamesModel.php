@@ -182,12 +182,31 @@
         public function battle_turn($characters, $enemy)
         {
                 for($character_number = 0; $character_number < count($characters); $character_number++) {
-                        $chara = $characters[$character_number];
-                        for($enemy_number = 0; $enemy_number < $character_number; $enemy_number++) {
-                                $ene = $enemy[$enemy_number];
+                        
+                        $character_actif = $characters[$character_number];
+
+                        if($character_actif->character_life > 0) {
+
+                                $character_turn = $characters[$character_number];
+
+                                for($enemy_number = 0; $enemy_number < $character_number; $enemy_number++) {
+
+                                        $enemy_life = $enemy[$enemy_number];
+
+                                        if($enemy_life->enemy_life > 0) {
+                                                
+                                                $enemy_turn[] = $enemy[$enemy_number];
+                                                var_dump($enemy_turn);
+
+                                        } else {
+                                                
+                                        }
+                                        
+                                }
+                        } else {
                                 
-                                le code de combat 3 contre 3;
                         }
+                        
                 }
                 die;
         }
