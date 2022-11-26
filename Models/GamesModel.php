@@ -188,24 +188,22 @@
                         if($character_actif->character_life > 0) {
 
                                 $character_turn = $characters[$character_number];
-                                var_dump($character_turn);die;
 
-                                for($enemy_number = 0; $enemy_number < $character_number; $enemy_number++) {
+                                for($enemy_number = 0; $enemy_number < count($enemy); $enemy_number++) {
+        
+                                        $enemy_actif = $enemy[$enemy_number];
 
-                                        $enemy_life = $enemy[$enemy_number];
+                                        if($enemy_actif->enemy_life > 0) {
 
-                                        if($enemy_life->enemy_life > 0) {
-                                                
-                                                $enemy_turn = $enemy[$enemy_number];
-                                                var_dump($enemy_turn);
-
-                                        } else {
-                                                
+                                                $enemy_name = $enemy_actif->enemy_name;
+                                                $enemy_life = $enemy_actif->enemy_life;
+                                                $enemy_attack = $enemy_actif->enemy_attack;
+                                                var_dump($enemy_name);
+                                                var_dump($enemy_life);
+                                                var_dump($enemy_attack);
                                         }
-                                        
+
                                 }
-                        } else {
-                                
                         }
                         
                 }
