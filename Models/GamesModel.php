@@ -186,11 +186,11 @@
 
                         if($characters[$character_number]->character_life > 0) {
                 
-                                $character_actif[] = [$characters[$character_number],true];
+                                $character_actif[] = [true,$characters[$character_number]];
                                 
                         } else {
 
-                                $character_actif[] = [$characters[$character_number],false];
+                                $character_actif[] = [false,$characters[$character_number]];
                         }
 
                 } 
@@ -222,10 +222,15 @@
         public function battle($characters, $enemy, int $actions, int $dice )
         {
                 $character_actif = $this->battle_turn_character($characters);
-                $enemy_actif = $this->battle_turn_enemy($enemy);
-                var_dump($character_actif);die;
+                var_dump($character_actif[2][0]);die;
+                $game = false;
 
-                while($character_actif){}
+                while($game == false){
+                        $character_actif = $this->battle_turn_character($characters);
+                        if($character_actif[0] == true) {
+                                var_dump($character_actif[0][2]->character_life);
+                        }
+                } die;
   
                 if($actions == 1) {
                         
