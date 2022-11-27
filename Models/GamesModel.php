@@ -198,10 +198,16 @@
                                         if($enemy_life > 0) {
 
                                                 if($actions == 1) {
-
-                                                        $degats = $enemy_attack - ($character_life);
+                                                        echo "<br>";
+                                                        echo "{$character_name}";
+                                                        $degats = (intval($enemy_attack) - intval($character_life));
+                                                        var_dump($enemy_attack);
+                                                        echo "{$character_life}";
+                                                        echo "<br>";
                                                         echo "{$character_name} prend {$degats} de degats par {$enemy_name}"; 
                                                         echo "<br><br>";
+                                                        echo "{$character_life}";
+                                                        echo "<br>";
 
                                                 } elseif($actions == 2) {
 
