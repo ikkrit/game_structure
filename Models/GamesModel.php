@@ -178,6 +178,7 @@
             return $enemy;
         }
 
+        // CHARACTERS ACTIF
 
         public function battle_turn_character($characters)
         {
@@ -195,6 +196,8 @@
                 } 
                 return $character_actif;
         }
+
+        // ENEMY ACTIF
 
         public function battle_turn_enemy($enemy)
         {
@@ -214,10 +217,15 @@
 
         }
 
+        // BATTLE
+
         public function battle($characters, $enemy, int $actions, int $dice )
         {
                 $character_actif = $this->battle_turn_character($characters);
                 $enemy_actif = $this->battle_turn_enemy($enemy);
+                var_dump($character_actif);die;
+
+                while($character_actif){}
   
                 if($actions == 1) {
                         
