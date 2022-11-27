@@ -112,10 +112,7 @@
             
             $battle_enemy = $gameModel->battle_enemy($enemy_random1, $enemy_random2, $enemy_random3);
 
-            $test = $gameModel->battle_turn($battle_characters,$battle_enemy, 1);
-
-
-            $action = $gameModel->degats($battle_characters,$battle_enemy,1,$gameModel->throw_dice());
+            $action = $gameModel->battle($battle_characters,$battle_enemy,1,$gameModel->throw_dice());
 
             
 

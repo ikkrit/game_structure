@@ -179,71 +179,60 @@
         }
 
 
-        public function battle_turn($characters, $enemy, int $actions)
+        public function battle_turn_character($characters)
         {
                 for($character_number = 0; $character_number < count($characters); $character_number++) {
-                        
-                        $character_name = $characters[$character_number]->character_name;
-                        $character_life = $characters[$character_number]->character_life;
-                        $character_attack = $characters[$character_number]->character_attack;
 
-                        if($character_life > 0) {
-
-                                for($enemy_number = 0; $enemy_number < count($enemy); $enemy_number++) {
-        
-                                        $enemy_name = $enemy[$enemy_number]->enemy_name;
-                                        $enemy_life = $enemy[$enemy_number]->enemy_life;
-                                        $enemy_attack = $enemy[$enemy_number]->enemy_attack;
-
-                                        if($enemy_life > 0) {
-
-                                                if($actions == 1) {
-                                                        echo "<br>";
-                                                        echo "{$character_name}";
-                                                        $degats = (intval($enemy_attack) - intval($character_life));
-                                                        var_dump($enemy_attack);
-                                                        echo "{$character_life}";
-                                                        echo "<br>";
-                                                        echo "{$character_name} prend {$degats} de degats par {$enemy_name}"; 
-                                                        echo "<br><br>";
-                                                        echo "{$character_life}";
-                                                        echo "<br>";
-
-                                                } elseif($actions == 2) {
-
-                                                        $degats = $character_attack - ($enemy_attack);
-
-                                                } else {
-
-                                                        return false;
-                                                }
-                                        } else {
-                                                echo "combat fini";
-                                        }
-
-                                }
+                        if($characters[$character_number]->character_life > 0) {
+                
+                                $character_actif[] = [$characters[$character_number],true];
+                                
                         } else {
-                                echo "combat fini";
+
+                                $character_actif[] = [$characters[$character_number],false];
                         }
-                        
-                }
-                die;
+
+                } 
+                return $character_actif;
         }
 
-        public function degats($characters, $enemy, int $actions, int $dice )
+        public function battle_turn_enemy($enemy)
         {
+                for($enemy_number = 0; $enemy_number < count($enemy); $enemy_number++) {
+        
+                        if($enemy[$enemy_number]->enemy_life > 0) {
+                
+                                $enemy_actif[] = [$enemy[$enemy_number],true];
+                                
+                        } else {
 
+                                $enemy_actif[] = [$enemy[$enemy_number],false];
+                        }
+
+                } 
+                return $enemy_actif;
+
+        }
+
+        public function battle($characters, $enemy, int $actions, int $dice )
+        {
+                $character_actif = $this->battle_turn_character($characters);
+                $enemy_actif = $this->battle_turn_enemy($enemy);
+  
                 if($actions == 1) {
-                        $degats = $enemy->enemy_attack - ($characters->character_life * $dice);
+                        
+                        
+
                 } elseif($actions == 2) {
-                        $degats = $characters->character_attack - ($enemy->enemy_attack * $dice);
+                        
+
+
                 } else {
+
                         return false;
                 }
 
-                var_dump($degats);die;
                 
-                return $degats;  
         }
 
         public function battle_action($character_battle, $enemy_battle)
