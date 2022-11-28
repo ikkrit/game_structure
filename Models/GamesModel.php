@@ -221,14 +221,17 @@
 
         public function battle($characters, $enemy, int $actions, int $dice )
         {
-                $character_actif = $this->battle_turn_character($characters);
-                var_dump($character_actif[2]);die;
                 $game = false;
 
+                for($character = 0; $character < count($characters); $character++) {
+                        var_dump($characters[$character]);
+                }
+                exit;
+                
                 while($game == false){
-                        $character_actif = $this->battle_turn_character($characters);
-                        if($character_actif[0] == true) {
-                                var_dump($character_actif[0][2]->character_life);
+
+                        if($this->battle_turn_character($characters) == true) {
+                                var_dump($characters);
                         }
                 } die;
   
