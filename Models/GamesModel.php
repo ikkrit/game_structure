@@ -223,16 +223,21 @@
         {
                 $game = false;
 
-                for($character = 0; $character < count($characters); $character++) {
-                        var_dump($characters[$character]);
-                }
-                exit;
-                
-                while($game == false){
+                $character_one = $characters[0];
+                $character_two = $characters[1];
+                $character_three = $characters[2];
 
-                        if($this->battle_turn_character($characters) == true) {
-                                var_dump($characters);
+                $enemy_one = $enemy[0];
+                $enemy_one = $enemy[1];
+                $enemy_one = $enemy[2];
+
+                while($game == false){
+                        
+                        for($i = 0; $i < count($characters); $i++) {
+                                $character_battle = $characters[$i];
+                                var_dump($character_battle);
                         }
+
                 } die;
   
                 if($actions == 1) {
