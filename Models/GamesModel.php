@@ -180,63 +180,69 @@
 
         // CHARACTERS ACTIF
 
-        public function battle_character_life($characters)
+        public function battle_life($life)
         {
 
-                if($characters->character_life > 0) {
+                if($life > 0) {
                 
-                        $character_life = true;
+                        $life = true;
                                 
                 } else {
 
-                        $character_life = false;
+                        $life = false;
                 }
 
-                return $character_life;
-        }
-
-        // ENEMY ACTIF
-
-        public function battle_enemy_life($enemy)
-        {
-        
-                if($enemy->enemy_life > 0) {
-                
-                        $enemy_life = true;
-                                
-                } else {
-
-                        $enemy_life = false;
-                }
-
-                return $enemy_life;
-
+                return $life;
         }
 
         // BATTLE
 
         public function battle($characters, $enemy, int $actions, int $dice )
         {
-                $game = false;
+                $game = true;
 
                         $character_one = $characters[0];
                         $character_life_one = intval($character_one->character_life);
+
                         $character_two = $characters[1];
+                        $character_life_two = intval($character_two->character_life);
+
                         $character_three = $characters[2];
+                        $character_life_three = intval($character_three->character_life);
 
                         $enemy_one = $enemy[0];
-                        $enemy_two = $enemy[1];
-                        $enemy_three = $enemy[2];
+                        $enemy_life_one = intval($enemy_one->enemy_life);
 
-                while($game === false){
+                        $enemy_two = $enemy[1];
+                        $enemy_life_two = intval($enemy_two->enemy_life);
+
+                        $enemy_three = $enemy[2];
+                        $enemy_life_three = intval($enemy_three->enemy_life);
+
+                while($game === true){
                         
-                        if($character_life_one > 0) {
+                        if($this->battle_life($character_life_one)) {
 
                                 $character_life_one -= 50;
-                                
+                                var_dump($character_life_one);
+
+                        } elseif($this->battle_life($character_life_two)) { 
+
+                                $character_life_two -= 50;
+                                var_dump($character_life_two);
+
+                        } elseif($this->battle_life($character_life_three)) {
+
+                                $character_life_three -= 50;
+                                var_dump($character_three->character_name);
+                                var_dump($character_life_three);
+
                         } else {
-                                $game = true;
+
+                                $game = false;
                         }
+
+                        
 
                 } 
 
