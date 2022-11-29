@@ -219,44 +219,27 @@
         {
                 $game = false;
 
-                while($game == false){
+                        $character_one = $characters[0];
+                        $character_life_one = intval($character_one->character_life);
+                        $character_two = $characters[1];
+                        $character_three = $characters[2];
+
+                        $enemy_one = $enemy[0];
+                        $enemy_two = $enemy[1];
+                        $enemy_three = $enemy[2];
+
+                while($game === false){
                         
-                        for($i = 0; $i < count($characters); $i++) {
+                        if($character_life_one > 0) {
 
-                                $character_battle = $characters[$i];
+                                $character_life_one -= 50;
+                                
+                        } else {
+                                $game = true;
+                        }
 
-                                if($this->battle_character_life($character_battle)) {
-                                        
-                                        for($j = 0; $j < count($enemy); $j++) {
+                } 
 
-                                                $enemy_battle = $enemy[$j];
-
-                                                if($this->battle_enemy_life($enemy_battle)) {
-                                                        
-                                                        $battle_turn = 
-                                                }
-
-                                        }
-
-                                }
-                        }die;
-
-                } die;
-  
-                if($actions == 1) {
-                        
-                        
-
-                } elseif($actions == 2) {
-                        
-
-
-                } else {
-
-                        return false;
-                }
-
-                
         }
 
         public function battle_action($character_battle, $enemy_battle)
