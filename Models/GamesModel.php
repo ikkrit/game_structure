@@ -214,15 +214,19 @@
 
                         $character_three = $characters[2];
                         $character_life_three = intval($character_three->character_life);
+                        $character_attack_three = intval($character_three->character_attack);
 
                         $enemy_one = $enemy[0];
                         $enemy_life_one = intval($enemy_one->enemy_life);
+                        $enemy_attack_one = intval($enemy_one->enemy_attack);
 
                         $enemy_two = $enemy[1];
                         $enemy_life_two = intval($enemy_two->enemy_life);
+                        $enemy_attack_two = intval($enemy_two->enemy_attack);
 
                         $enemy_three = $enemy[2];
                         $enemy_life_three = intval($enemy_three->enemy_life);
+                        $enemy_attack_three = intval($enemy_three->enemy_attack);
 
                 while($game === true){
 
@@ -231,7 +235,7 @@
 
                                 if($this->battle_life($character_life_one)) {
 
-                                        $character_life_one = battle_degats();
+                                        $character_life_one = $this->battle_degats();
         
                                 } elseif($this->battle_life($character_life_two)) { 
         
