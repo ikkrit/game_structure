@@ -180,40 +180,36 @@
 
         // CHARACTERS ACTIF
 
-        public function battle_turn_character($characters)
+        public function battle_character_life($characters)
         {
-                for($character_number = 0; $character_number < count($characters); $character_number++) {
 
-                        if($characters[$character_number]->character_life > 0) {
+                if($characters->character_life > 0) {
                 
-                                $character_actif = true;
+                        $character_life = true;
                                 
-                        } else {
+                } else {
 
-                                $character_actif = false;
-                        }
+                        $character_life = false;
+                }
 
-                } 
-                return $character_actif;
+                return $character_life;
         }
 
         // ENEMY ACTIF
 
-        public function battle_turn_enemy($enemy)
+        public function battle_enemy_life($enemy)
         {
-                for($enemy_number = 0; $enemy_number < count($enemy); $enemy_number++) {
         
-                        if($enemy[$enemy_number]->enemy_life > 0) {
+                if($enemy->enemy_life > 0) {
                 
-                                $enemy_actif = true;
+                        $enemy_life = true;
                                 
-                        } else {
+                } else {
 
-                                $enemy_actif = false;
-                        }
+                        $enemy_life = false;
+                }
 
-                } 
-                return $enemy_actif;
+                return $enemy_life;
 
         }
 
@@ -223,20 +219,27 @@
         {
                 $game = false;
 
-                $character_one = $characters[0];
-                $character_two = $characters[1];
-                $character_three = $characters[2];
-
-                $enemy_one = $enemy[0];
-                $enemy_one = $enemy[1];
-                $enemy_one = $enemy[2];
-
                 while($game == false){
                         
                         for($i = 0; $i < count($characters); $i++) {
+
                                 $character_battle = $characters[$i];
-                                var_dump($character_battle);
-                        }
+
+                                if($this->battle_character_life($character_battle)) {
+                                        
+                                        for($j = 0; $j < count($enemy); $j++) {
+
+                                                $enemy_battle = $enemy[$j];
+
+                                                if($this->battle_enemy_life($enemy_battle)) {
+                                                        
+                                                        $battle_turn = 
+                                                }
+
+                                        }
+
+                                }
+                        }die;
 
                 } die;
   
