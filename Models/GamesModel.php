@@ -208,9 +208,11 @@
 
                         $character_one = $characters[0];
                         $character_life_one = intval($character_one->character_life);
+                        $character_attack_one = intval($character_one->character_attack);
 
                         $character_two = $characters[1];
                         $character_life_two = intval($character_two->character_life);
+                        $character_attack_two = intval($character_two->character_attack);
 
                         $character_three = $characters[2];
                         $character_life_three = intval($character_three->character_life);
@@ -235,17 +237,58 @@
 
                                 if($this->battle_life($character_life_one)) {
 
-                                        $character_life_one = $this->battle_degats();
+                                        if($this->battle_life($enemy_life_one)) {
+
+                                                $character_life_one = $this->battle_degats($enemy_attack_one,$character_life_one,$dice);
+
+                                                $enemy_life_one = $this->battle_degats($character_attack_one,$enemy_life_one,$dice);
+                                                
+                                        } elseif($this->battle_life($enemy_life_two)) {
+
+                                                $character_life_one = $this->battle_degats($enemy_attack_two,$character_life_one,$dice);
+
+                                                $enemy_life_two = $this->battle_degats($character_attack_one,$enemy_life_two,$dice);
+
+                                        } elseif($this->battle_life($enemy_life_three)) {
+
+                                                $character_life_one = $this->battle_degats($enemy_attack_three,$character_life_one,$dice);
+
+                                                $enemy_life_three = $this->battle_degats($character_attack_one,$enemy_life_three,$dice);
+                                        } 
         
                                 } elseif($this->battle_life($character_life_two)) { 
         
-                                        $character_life_two -= 50;
+                                        if($this->battle_life($enemy_life_one)) {
+
+                                                $character_life_two = $this->battle_degats($enemy_attack_one,$character_life_two,$dice);
+                                                
+                                        } elseif($this->battle_life($enemy_life_one)) {
+
+                                                $character_life_two = $this->battle_degats($enemy_attack_two,$character_life_two,$dice);
+
+                                        } elseif($this->battle_life($enemy_life_one)) {
+
+                                                $character_life_two = $this->battle_degats($enemy_attack_three,$character_life_two,$dice);
+                                        }
         
                                 } elseif($this->battle_life($character_life_three)) {
         
-                                        $character_life_three -= 50;
+                                        if($this->battle_life($enemy_life_one)) {
+
+                                                $character_life_three = $this->battle_degats($enemy_attack_one,$character_life_three,$dice);
+                                                
+                                        } elseif($this->battle_life($enemy_life_one)) {
+
+                                                $character_life_three = $this->battle_degats($enemy_attack_two,$character_life_three,$dice);
+
+                                        } elseif($this->battle_life($enemy_life_one)) {
+
+                                                $character_life_three = $this->battle_degats($enemy_attack_three,$character_life_three,$dice);
+                                        }
         
                                 } else {
+
+                                        echo "Tout les characters sont morts";
         
                                         $game = false;
                                 }
