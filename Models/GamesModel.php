@@ -241,7 +241,9 @@
 
                                                 $character_life_one = $this->battle_degats($enemy_attack_one,$character_life_one,$dice);
 
-                                                $enemy_life_one = $this->battle_degats($character_attack_one,$enemy_life_one,$dice);
+                                                $this->battle_life($character_life_one) ?? $enemy_life_one = $this->battle_degats($character_attack_one,$enemy_life_one,$dice);
+
+                                                var_dump($character_life_one);
                                                 
                                         } elseif($this->battle_life($enemy_life_two)) {
 
