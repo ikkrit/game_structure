@@ -294,6 +294,73 @@
 
                         } elseif($actions == 2) {
 
+                                if($this->battle_life($enemy_one->enemy_life)) {
+
+                                        if($this->battle_life($character_one->character_life)) {
+                
+                                                $enemy_one->enemy_life = $this->battle_degats($character_one->character_attack,$enemy_one->enemy_life,$dice);
+                
+                                                echo "{$enemy_one->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name}<br>";
+                                                
+                                        } elseif($this->battle_life($character_two->character_life)) {
+                
+                                                $enemy_one->enemy_life = $this->battle_degats($character_two->character_attack,$enemy_one->enemy_life,$dice);
+                
+                                                echo "{$enemy_one->character_name} à subie {$character_two->character_attack} points de degats de {$character_two->character_name}<br>";
+                
+                                        } elseif($this->battle_life($character_three->character_life)) {
+                
+                                                $enemy_one->enemy_life = $this->battle_degats($character_three->character_attack,$enemy_one->enemy_life,$dice);
+                
+                                                echo "{$enemy_one->enemy_name} à subie {$character_three->character_attack} points de degats de {$character_three->character_name}<br>";
+                                        } 
+                
+                                } elseif($this->battle_life($character_two->character_life)) {
+                
+                                        if($this->battle_life($enemy_one->enemy_life)) {
+                
+                                                $character_two->character_life = $this->battle_degats($enemy_one->enemy_attack,$character_two->character_life,$dice);
+                
+                                                echo "{$character_two->character_name} à subie {$enemy_one->enemy_attack} points de degats de {$enemy_one->enemy_name}<br>";
+                                                
+                                        } elseif($this->battle_life($enemy_two->enemy_life)) {
+                
+                                                $character_two->character_life = $this->battle_degats($enemy_two->enemy_attack,$character_two->character_life,$dice);
+                
+                                                echo "{$character_two->character_name} à subie {$enemy_two->enemy_attack} points de degats de {$enemy_two->enemy_name}<br>";
+                
+                                        } elseif($this->battle_life($enemy_three->enemy_life)) {
+                
+                                                $character_two->character_life = $this->battle_degats($enemy_three->enemy_attack,$character_two->character_life,$dice);
+                
+                                                echo "{$character_two->character_name} à subie {$enemy_three->enemy_attack} points de degats de {$enemy_three->enemy_name}<br>";
+                                        } 
+                
+                                } elseif($this->battle_life($character_three->character_life)) {
+                
+                                        if($this->battle_life($enemy_one->enemy_life)) {
+                
+                                                $character_three->character_life = $this->battle_degats($enemy_one->enemy_attack,$character_three->character_life,$dice);
+                
+                                                echo "{$character_three->character_name} à subie {$enemy_one->enemy_attack} points de degats de {$enemy_one->enemy_name}<br>";
+                                                
+                                        } elseif($this->battle_life($enemy_two->enemy_life)) {
+                
+                                                $character_three->character_life = $this->battle_degats($enemy_two->enemy_attack,$character_three->character_life,$dice);
+                
+                                                echo "{$character_three->character_name} à subie {$enemy_two->enemy_attack} points de degats de {$enemy_two->enemy_name}<br>";
+                
+                                        } elseif($this->battle_life($enemy_three->enemy_life)) {
+                
+                                                $character_three->character_life = $this->battle_degats($enemy_three->enemy_attack,$character_three->character_life,$dice);
+                
+                                                echo "{$character_three->character_name} à subie {$enemy_three->enemy_attack} points de degats de {$enemy_three->enemy_name}<br>";
+                                        } 
+                
+                                } else {
+                
+                                        $game = false;
+                                }
 
                         } else {
                                 $game = false;
