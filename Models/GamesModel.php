@@ -1,11 +1,11 @@
 <?php
 
-    namespace App\Models;
+namespace App\Models;
 
-    use App\Core\Constants\ConstantsGameChapOne;
+use App\Core\Constants\ConstantsGameChapOne;
 
-    class GamesModel extends Model
-    {
+class GamesModel extends Model
+{
 
         protected $game_id;
         protected $game_character;
@@ -13,169 +13,168 @@
         protected $game_save;
         protected $create_at;
         protected $game_user_id;
-        
+
 
         public function __construct()
         {
-            $this->table = 'game';
+                $this->table = 'game';
         }
 
 
         public function chapitre_one(int $zone, int $choice)
         {
-            if($zone == 1) {
+                if ($zone == 1) {
 
-                if($choice == 1) {
-                        $constants = ConstantsGameChapOne::CHAP_01_01;
-                        $page = "game_party";
-                } elseif($choice == 2) {
-                        $constants = ConstantsGameChapOne::CHAP_1_BAD1;
-                        $page = "game_lose";
-                } elseif($choice == 3) {
-                        $constants = ConstantsGameChapOne::CHAP_1_BAD2;
-                        $page = "game_lose";
+                        if ($choice == 1) {
+                                $constants = ConstantsGameChapOne::CHAP_01_01;
+                                $page = "game_party";
+                        } elseif ($choice == 2) {
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                                $page = "game_lose";
+                        } elseif ($choice == 3) {
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                                $page = "game_lose";
+                        } else {
+                                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                                $page = "game_lose";
+                        }
+                } elseif ($zone == 2) {
+
+                        if ($choice == 1) {
+                                $constants = ConstantsGameChapOne::CHAP_01_01;
+                                $page = "game_party";
+                        } elseif ($choice == 2) {
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                                $page = "game_lose";
+                        } elseif ($choice == 3) {
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                                $page = "game_lose";
+                        } else {
+                                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                                $page = "game_lose";
+                        }
+                } elseif ($zone == 3) {
+
+                        if ($choice == 1) {
+                                $constants = ConstantsGameChapOne::CHAP_01_01;
+                                $page = "game_party";
+                        } elseif ($choice == 2) {
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                                $page = "game_lose";
+                        } elseif ($choice == 3) {
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                                $page = "game_lose";
+                        } else {
+                                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                                $page = "game_lose";
+                        }
                 } else {
                         $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                         $page = "game_lose";
                 }
-            }
-            elseif($zone == 2) {
 
-                if($choice == 1) {
-                        $constants = ConstantsGameChapOne::CHAP_01_01;
-                        $page = "game_party";
-                } elseif($choice == 2) {
-                        $constants = ConstantsGameChapOne::CHAP_1_BAD1;
-                        $page = "game_lose";
-                } elseif($choice == 3) {
-                        $constants = ConstantsGameChapOne::CHAP_1_BAD2;
-                        $page = "game_lose";
-                } else {
-                        $constants = ConstantsGameChapOne::CHAP_1_ERROR;
-                        $page = "game_lose";
-                }
-            } 
-            elseif($zone == 3) {
+                $chapitre_one = [$constants, $page];
 
-                if($choice == 1) {
-                        $constants = ConstantsGameChapOne::CHAP_01_01;
-                        $page = "game_party";
-                } elseif($choice == 2) {
-                        $constants = ConstantsGameChapOne::CHAP_1_BAD1;
-                        $page = "game_lose";
-                } elseif($choice == 3) {
-                        $constants = ConstantsGameChapOne::CHAP_1_BAD2;
-                        $page = "game_lose";
-                } else {
-                        $constants = ConstantsGameChapOne::CHAP_1_ERROR;
-                        $page = "game_lose";
-                }
-                
-            } else {
-                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
-                $page = "game_lose";
-            }
-
-            $chapitre_one = [$constants,$page];
-
-            return $chapitre_one;
-            
+                return $chapitre_one;
         }
 
         public function chapitre_two(int $zone, int $choice)
         {
-            echo "two";
+                echo "two";
         }
 
         public function chapitre_three(int $zone, int $choice)
         {
-            echo "three";
+                echo "three";
         }
 
         public function chapitre_four(int $zone, int $choice)
         {
-            echo "four";
+                echo "four";
         }
 
         public function chapitre_final(int $zone, int $choice)
         {
-            echo "final";
+                echo "final";
         }
 
         public function chapitre_select(string $chapitre_select, int $zone, int $choice)
         {
-            switch($chapitre_select) {
-                case "one":
-                        $chapitre_select = $this->chapitre_one($zone, $choice);
-                        break;
-                case "two":
-                        $chapitre_select = $this->chapitre_two($zone, $choice);
-                         break;
-                case "three":
-                        $chapitre_select = $this->chapitre_three($zone, $choice);
-                        break;
-                case "four":
-                        $chapitre_select = $this->chapitre_four($zone, $choice);
-                        break;
-                case "final";
-                        $chapitre_select = $this->chapitre_final($zone, $choice);
-                        break;
-                default:
-                        $chapitre_select = $this->chapitre_one($zone, $choice);
+                switch ($chapitre_select) {
+                        case "one":
+                                $chapitre_select = $this->chapitre_one($zone, $choice);
+                                break;
+                        case "two":
+                                $chapitre_select = $this->chapitre_two($zone, $choice);
+                                break;
+                        case "three":
+                                $chapitre_select = $this->chapitre_three($zone, $choice);
+                                break;
+                        case "four":
+                                $chapitre_select = $this->chapitre_four($zone, $choice);
+                                break;
+                        case "final";
+                                $chapitre_select = $this->chapitre_final($zone, $choice);
+                                break;
+                        default:
+                                $chapitre_select = $this->chapitre_one($zone, $choice);
+                }
 
-            }
-
-            return $chapitre_select;
+                return $chapitre_select;
         }
 
         // LANCER DE DES
 
         public function throw_dice()
         {
-            $throw = rand(1,6);
-            return $throw;
+                $throw = rand(1, 6);
+                return $throw;
         }
 
         // CHARACTER INIT
 
         public function battle_character($character_one, $character_two = null, $character_three = null)
         {
-            $battle_character = array();
+                $battle_character = array();
 
-            $battle_character[] = $character_one;
+                $battle_character[] = $character_one;
 
-            if($character_two != null)
-                $battle_character[] = $character_two;
-            if($character_three != null)
-                $battle_character[] = $character_three;
+                if ($character_two != null)
+                        $battle_character[] = $character_two;
+                if ($character_three != null)
+                        $battle_character[] = $character_three;
 
-            // RECUP DES CHARACTERS
+                // RECUP DES CHARACTERS
 
-            for($i = 0; $i < count($battle_character); $i++) {
-                    $characters[] = $battle_character[$i];
-            }
+                for ($i = 0; $i < count($battle_character); $i++) {
+                        $characters[] = $battle_character[$i];
+                }
 
-            return $characters;
+                return $characters;
         }
 
         // ENEMY INIT
 
         public function battle_enemy($enemy_one, $enemy_two = null, $enemy_three = null)
         {
-            $battle_enemy = array();
+                $battle_enemy = array();
 
-            $battle_enemy[] = $enemy_one;
+                $battle_enemy[] = $enemy_one;
 
-            if($enemy_two != null) {$battle_enemy[] = $enemy_two;}
-            if($enemy_three != null) {$battle_enemy[] = $enemy_three;}
+                if ($enemy_two != null) {
+                        $battle_enemy[] = $enemy_two;
+                }
+                if ($enemy_three != null) {
+                        $battle_enemy[] = $enemy_three;
+                }
 
-            // RECUP DES ENEMY
+                // RECUP DES ENEMY
 
-            for($i = 0; $i < count($battle_enemy); $i++) {
-                $enemy[] = $battle_enemy[$i];
-            }
+                for ($i = 0; $i < count($battle_enemy); $i++) {
+                        $enemy[] = $battle_enemy[$i];
+                }
 
-            return $enemy;
+                return $enemy;
         }
 
         // CHARACTERS ACTIF
@@ -183,14 +182,14 @@
         public function battle_life($life)
         {
 
-                if($life > 0) {
+                if ($life > 0) {
 
-                        $life = true;       
+                        $life = true;
                 } else {
 
                         $life = false;
-
-                } return $life;
+                }
+                return $life;
         }
 
         public function battle_degats($attack, $life, $dice)
@@ -203,158 +202,133 @@
 
         // BATTLE
 
-        public function battle($characters, $enemy, int $actions, int $dice )
+        public function battle($characters, $enemy, int $actions, int $dice)
         {
                 $game = true;
 
-                        $character_one = $characters[0];
+                $character_one = $characters[0];
 
-                        $character_two = $characters[1];
+                $character_two = $characters[1];
 
-                        $character_three = $characters[2];
+                $character_three = $characters[2];
 
-                        $enemy_one = $enemy[0];
+                $enemy_one = $enemy[0];
 
-                        $enemy_two = $enemy[1];
+                $enemy_two = $enemy[1];
 
-                        $enemy_three = $enemy[2];
+                $enemy_three = $enemy[2];
 
-                while($game === true){
+                while ($game === true) {
 
-                        
-                        if($actions == 1) {
 
-                                if($this->battle_life($character_one->character_life)) {
+                        if ($actions == 1) {
 
-                                        if($this->battle_life($enemy_one->enemy_life)) {
-                
-                                                $character_one->character_life = $this->battle_degats($enemy_one->enemy_attack,$character_one->character_life,$dice);
-                
+                                if ($this->battle_life($character_one->character_life)) {
+
+                                        if ($this->battle_life($enemy_one->enemy_life)) {
+
+                                                $character_one->character_life = $this->battle_degats($enemy_one->enemy_attack, $character_one->character_life, $dice);
+
                                                 echo "{$character_one->character_name} à subie {$enemy_one->enemy_attack} points de degats de {$enemy_one->enemy_name}<br>";
 
-                                                echo "one<br>";
+                                                if ($this->battle_life($character_one->character_life)) {
 
-                                                if($this->battle_life($character_one->character_life)) {
-
-                                                        $enemy_one->enemy_life = $this->battle_degats($character_one->character_attack,$enemy_one->enemy_life,$dice);
+                                                        $enemy_one->enemy_life = $this->battle_degats($character_one->character_attack, $enemy_one->enemy_life, $dice);
 
                                                         echo "{$enemy_one->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name}<br>";
-                                                }
-                                                
-                                        } 
 
-                                        if($this->battle_life($enemy_two->enemy_life)) {
-                
-                                                $character_one->character_life = $this->battle_degats($enemy_two->enemy_attack,$character_one->character_life,$dice);
-                
+                                                } else {
+
+                                                        echo "{$enemy_one->enemy_name} est mort";
+                                                }
+
+                                        } else {
+
+                                                echo "character 1";
+                                                $game = false;
+                                        }
+
+                                        if ($this->battle_life($enemy_two->enemy_life)) {
+
+                                                $character_one->character_life = $this->battle_degats($enemy_two->enemy_attack, $character_one->character_life, $dice);
+
                                                 echo "{$character_one->character_name} à subie {$enemy_two->enemy_attack} points de degats de {$enemy_two->enemy_name}<br>";
 
-                                                echo "deux<br>";
-                                        } 
-                                        
-                                        if($this->battle_life($enemy_three->enemy_life)) {
-                
-                                                $character_one->character_life = $this->battle_degats($enemy_three->enemy_attack,$character_one->character_life,$dice);
-                
+                                                if ($this->battle_life($character_one->character_life)) {
+
+                                                        $enemy_two->enemy_life = $this->battle_degats($character_one->character_attack, $enemy_two->enemy_life, $dice);
+
+                                                        echo "{$enemy_two->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name}<br>";
+                                                }
+
+                                        } else {
+
+                                                echo "character 2";
+                                                $game = false;
+                                        }
+
+                                        if ($this->battle_life($enemy_three->enemy_life)) {
+
+                                                $character_one->character_life = $this->battle_degats($enemy_three->enemy_attack, $character_one->character_life, $dice);
+
                                                 echo "{$character_one->character_name} à subie {$enemy_three->enemy_attack} points de degats de {$enemy_three->enemy_name}<br>";
 
-                                                echo "trois<br>";
-                                        } 
-                
-                                } 
-                                
-                                if($this->battle_life($character_two->character_life)) {
-                
-                                        if($this->battle_life($enemy_one->enemy_life)) {
-                
-                                                $character_two->character_life = $this->battle_degats($enemy_one->enemy_attack,$character_two->character_life,$dice);
-                
-                                                echo "{$character_two->character_name} à subie {$enemy_one->enemy_attack} points de degats de {$enemy_one->enemy_name}<br>";
-                                                
-                                        } elseif($this->battle_life($enemy_two->enemy_life)) {
-                
-                                                $character_two->character_life = $this->battle_degats($enemy_two->enemy_attack,$character_two->character_life,$dice);
-                
-                                                echo "{$character_two->character_name} à subie {$enemy_two->enemy_attack} points de degats de {$enemy_two->enemy_name}<br>";
-                
-                                        } elseif($this->battle_life($enemy_three->enemy_life)) {
-                
-                                                $character_two->character_life = $this->battle_degats($enemy_three->enemy_attack,$character_two->character_life,$dice);
-                
-                                                echo "{$character_two->character_name} à subie {$enemy_three->enemy_attack} points de degats de {$enemy_three->enemy_name}<br>";
-                                        } 
-                
-                                } 
-                                
-                                if($this->battle_life($character_three->character_life)) {
-                
-                                        if($this->battle_life($enemy_one->enemy_life)) {
-                
-                                                $character_three->character_life = $this->battle_degats($enemy_one->enemy_attack,$character_three->character_life,$dice);
-                
-                                                echo "{$character_three->character_name} à subie {$enemy_one->enemy_attack} points de degats de {$enemy_one->enemy_name}<br>";
-                                                
-                                        } elseif($this->battle_life($enemy_two->enemy_life)) {
-                
-                                                $character_three->character_life = $this->battle_degats($enemy_two->enemy_attack,$character_three->character_life,$dice);
-                
-                                                echo "{$character_three->character_name} à subie {$enemy_two->enemy_attack} points de degats de {$enemy_two->enemy_name}<br>";
-                
-                                        } elseif($this->battle_life($enemy_three->enemy_life)) {
-                
-                                                $character_three->character_life = $this->battle_degats($enemy_three->enemy_attack,$character_three->character_life,$dice);
-                
-                                                echo "{$character_three->character_name} à subie {$enemy_three->enemy_attack} points de degats de {$enemy_three->enemy_name}<br>";
-                                        } 
-                
+                                                if ($this->battle_life($character_one->character_life)) {
+
+                                                        $enemy_three->enemy_life = $this->battle_degats($character_one->character_attack, $enemy_three->enemy_life, $dice);
+
+                                                        echo "{$enemy_three->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name}<br>";
+
+                                                }
+                                        } else {
+
+                                                echo "character 3";
+                                                $game = false;
+                                        }
+
                                 } else {
-                
+                                       
                                         $game = false;
                                 }
 
-                        } elseif($actions == 2) {
-
-                                
-
-                        } else {
-                                $game = false;
                         }
 
-                        
+                        else {
 
-                } 
-
+                                $game = false;
+                        }
+                }
         }
 
         public function battle_action($character_battle, $enemy_battle)
         {
-                
+
                 // BOUCLE DU COMBAT
 
                 // CHARACTERS
-                $battle_order_characters = $character_battle[rand(0,count($character_battle)-1)];
+                $battle_order_characters = $character_battle[rand(0, count($character_battle) - 1)];
 
                 // ENEMY
-                $battle_order_enemy = $enemy_battle[rand(0,count($enemy_battle)-1)];
+                $battle_order_enemy = $enemy_battle[rand(0, count($enemy_battle) - 1)];
 
 
                 $battle = false;
 
-                while($battle == false) {
+                while ($battle == false) {
 
-                    if($battle_order_characters->character_life > 0) {
-                        if($battle_order_enemy->enemy_life > 0) {
-                            echo "<div class='battle__start battle__box'>
+                        if ($battle_order_characters->character_life > 0) {
+                                if ($battle_order_enemy->enemy_life > 0) {
+                                        echo "<div class='battle__start battle__box'>
                                         {$battle_order_characters->character_name} Attaque {$battle_order_enemy->enemy_name}
                                 </div>";
-                            echo "<div class='battle__action battle__box'>
+                                        echo "<div class='battle__action battle__box'>
                                         {$battle_order_enemy->enemy_name} reçois {$battle_order_enemy->enemy_life} de degats
                                 </div>";
 
-                            die;
+                                        die;
+                                }
                         }
-                    }
-                    /*while(($enemy[0]->enemy_life) > 0) {
+                        /*while(($enemy[0]->enemy_life) > 0) {
                         $enemy[0]->enemy_attack -= $characters[0]->character_life;
                             echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";
                     }
@@ -434,8 +408,4 @@
 
                 return $this;
         }
-
-        
-    }
-
-?>
+}
