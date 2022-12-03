@@ -239,12 +239,16 @@ class GamesModel extends Model
 
                                                 } else {
 
-                                                        echo "inter1 ";
+                                                        echo "{$character_one->character_name} est mort";
+
+                                                        break;
                                                 }
 
                                         } else {
 
                                                 echo "{$enemy_one->enemy_name} est mort";
+
+                                                $game = false;
                                         }
 
                                         if ($this->battle_life($enemy_two->enemy_life)) {
@@ -261,12 +265,17 @@ class GamesModel extends Model
 
                                                 } else {
 
-                                                        echo "{$enemy_two->enemy_name} est mort";
+                                                        echo "{$character_one->character_name} est mort";
+
+                                                        $game = false;
+
                                                 }
 
                                         } else {
 
-                                                echo "inter2 ";
+                                                echo "{$enemy_two->enemy_name} est mort";
+
+                                                break;
                                         }
 
                                         if ($this->battle_life($enemy_three->enemy_life)) {
@@ -281,11 +290,18 @@ class GamesModel extends Model
 
                                                         echo "{$enemy_three->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name}<br>";
 
+                                                } else {
+
+                                                        echo "{$character_one->character_name} est mort";
+
+                                                        $game = false;
                                                 }
+
                                         } else {
 
-                                                echo "character 3";
-                                                $game = false;
+                                                echo "{$enemy_three->enemy_name} est mort";
+
+                                                break;
                                         }
 
                                 } else {
@@ -293,9 +309,7 @@ class GamesModel extends Model
                                         $game = false;
                                 }
 
-                        }
-
-                        else {
+                        } else {
 
                                 $game = false;
                         }
