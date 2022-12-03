@@ -215,6 +215,8 @@ class GamesModel extends Model
 
                                         echo "{$enemy_one->enemy_name} à subie {$character->character_attack} points de degats de {$character->character_name} <br>";
 
+                                        if(!$this->battle_life($enemy_one->enemy_life)) echo "{$enemy_one->enemy_name} est mort <br>";
+
                                 } else {
 
                                         echo "{$character->character_name} est mort";
@@ -222,11 +224,7 @@ class GamesModel extends Model
                                         return false;
                                 }
 
-                        } else {
-
-                                echo "{$enemy_one->enemy_name} est mort";
-
-                        }
+                        } 
 
                         if ($this->battle_life($enemy_two->enemy_life)) {
 
@@ -239,6 +237,8 @@ class GamesModel extends Model
                                         $enemy_two->enemy_life = $this->battle_degats($character->character_attack, $enemy_two->enemy_life, $dice);
 
                                         echo "{$enemy_two->enemy_name} à subie {$character->character_attack} points de degats de {$character->character_name} <br>";
+
+                                        if(!$this->battle_life($enemy_two->enemy_life)) echo "{$enemy_two->enemy_name} est mort <br>";
 
                                 } else {
 
@@ -264,6 +264,8 @@ class GamesModel extends Model
                                         $enemy_three->enemy_life = $this->battle_degats($character->character_attack, $enemy_three->enemy_life, $dice);
 
                                         echo "{$enemy_three->enemy_name} à subie {$character->character_attack} points de degats de {$character->character_name} <br>";
+
+                                        if(!$this->battle_life($enemy_three->enemy_life)) echo "{$enemy_three->enemy_name} est mort <br>";
 
                                 } else {
 
