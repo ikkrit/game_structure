@@ -201,6 +201,11 @@ class GamesModel extends Model
 
         public function battle_turn($character, $enemy_one, $enemy_two, $enemy_three, $dice)
         {
+                $character_status = [];
+                $enemy_one_status = [];
+                $enemy_two_status = [];
+                $enemy_three_status = [];
+
                 if ($this->battle_life($character->character_life)) {
 
                         if ($this->battle_life($enemy_one->enemy_life)) {
@@ -217,11 +222,15 @@ class GamesModel extends Model
 
                                         if(!$this->battle_life($enemy_one->enemy_life)) echo "{$enemy_one->enemy_name} est mort <br>";
 
+                                        $enemy_one_status = $enemy_one->enemy_life;
+
                                 } else {
 
                                         echo "{$character->character_name} est mort";
 
-                                        return false;
+                                        $character_status = $character->character_life;
+
+                                        return [$character_status,$enemy_one_status,$enemy_two_status,$enemy_three_status];
                                 }
 
                         } 
@@ -240,17 +249,24 @@ class GamesModel extends Model
 
                                         if(!$this->battle_life($enemy_two->enemy_life)) echo "{$enemy_two->enemy_name} est mort <br>";
 
+                                        $enemy_two_status = $enemy_two->enemy_life;
+
                                 } else {
 
                                         echo "{$character->character_name} est mort";
 
-                                        return false;
+                                        $character_status = $character->character_life;
+
+                                        return [$character_status,$enemy_one_status,$enemy_two_status,$enemy_three_status];
 
                                 }
 
                         } else {
 
                                 echo "{$enemy_two->enemy_name} est mort";
+
+                                $enemy_two_status = $enemy_two->enemy_life;
+
                         }
 
                         if ($this->battle_life($enemy_three->enemy_life)) {
@@ -267,11 +283,15 @@ class GamesModel extends Model
 
                                         if(!$this->battle_life($enemy_three->enemy_life)) echo "{$enemy_three->enemy_name} est mort <br>";
 
+                                        $enemy_three_status = $enemy_one->enemy_life;
+
                                 } else {
 
                                         echo "{$character->character_name} est mort";
 
-                                        return false;
+                                        $character_status = $character->character_life;
+
+                                        return [$character_status,$enemy_one_status,$enemy_two_status,$enemy_three_status];
 
                                 }
 
@@ -279,12 +299,22 @@ class GamesModel extends Model
 
                                 echo "{$enemy_three->enemy_name} est mort";
 
+                                $enemy_three_status = $enemy_three->enemy_life;
+
                         }
 
                 } else {
                        
-                        return false;
+                        echo "{$character->character_name} est mort";
+
+                        $character_status = $character->character_life;
+
+                        return [$character_status,$enemy_one_status,$enemy_two_status,$enemy_three_status];
                 }
+
+                $character_status = $character->character_life;
+
+                return [$character_status,$enemy_one_status,$enemy_two_status,$enemy_three_status];
         }
 
 
@@ -311,92 +341,17 @@ class GamesModel extends Model
 
                         if ($actions == 1) {
 
-                                $this->battle_turn($character_one, $enemy_one, $enemy_two, $enemy_three, $dice);
+                                $battle_one = $this->battle_turn($character_one, $enemy_one, $enemy_two, $enemy_three, $dice);
+
+                                $battle_two = $this->battle_turn($character_two, $enemy_one, $enemy_two, $enemy_three, $dice);
+
+                                $battle_three = $this->battle_turn($character_three, $enemy_one, $enemy_two, $enemy_three, $dice);
+
+                                
+                        
+
 
                                 die;
-
-                                if ($this->battle_life($character_one->character_life)) {
-
-                                        if ($this->battle_life($enemy_one->enemy_life)) {
-
-                                                $character_one->character_life = $this->battle_degats($enemy_one->enemy_attack, $character_one->character_life, $dice);
-
-                                                echo "{$character_one->character_name} à subie {$enemy_one->enemy_attack} points de degats de {$enemy_one->enemy_name} <br> il reste {$character_one->character_life} de point de vie <br>";
-
-                                                if ($this->battle_life($character_one->character_life)) {
-
-                                                        $enemy_one->enemy_life = $this->battle_degats($character_one->character_attack, $enemy_one->enemy_life, $dice);
-
-                                                        echo "{$enemy_one->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name} <br>";
-
-                                                } else {
-
-                                                        echo "{$character_one->character_name} est mort";
-
-                                                }
-
-                                        } else {
-
-                                                echo "{$enemy_one->enemy_name} est mort";
-
-                                                $game = false;
-                                        }
-
-                                        if ($this->battle_life($enemy_two->enemy_life)) {
-
-                                                $character_one->character_life = $this->battle_degats($enemy_two->enemy_attack, $character_one->character_life, $dice);
-
-                                                echo "{$character_one->character_name} à subie {$enemy_two->enemy_attack} points de degats de {$enemy_two->enemy_name} <br> il reste {$character_one->character_life} de point de vie <br>";
-
-                                                if ($this->battle_life($character_one->character_life)) {
-
-                                                        $enemy_two->enemy_life = $this->battle_degats($character_one->character_attack, $enemy_two->enemy_life, $dice);
-
-                                                        echo "{$enemy_two->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name} <br>";
-
-                                                } else {
-
-                                                        echo "{$character_one->character_name} est mort";
-
-                                                        $game = false;
-
-                                                }
-
-                                        } else {
-
-                                                echo "{$enemy_two->enemy_name} est mort";
-
-                                        }
-
-                                        if ($this->battle_life($enemy_three->enemy_life)) {
-
-                                                $character_one->character_life = $this->battle_degats($enemy_three->enemy_attack, $character_one->character_life, $dice);
-
-                                                echo "{$character_one->character_name} à subie {$enemy_three->enemy_attack} points de degats de {$enemy_three->enemy_name} <br> il reste {$character_one->character_life} de point de vie <br>";
-
-                                                if ($this->battle_life($character_one->character_life)) {
-
-                                                        $enemy_three->enemy_life = $this->battle_degats($character_one->character_attack, $enemy_three->enemy_life, $dice);
-
-                                                        echo "{$enemy_three->enemy_name} à subie {$character_one->character_attack} points de degats de {$character_one->character_name} <br>";
-
-                                                } else {
-
-                                                        echo "{$character_one->character_name} est mort";
-
-                                                        $game = false;
-                                                }
-
-                                        } else {
-
-                                                echo "{$enemy_three->enemy_name} est mort";
-
-                                        }
-
-                                } else {
-                                       
-                                        $game = false;
-                                }
 
                         } else {
 
