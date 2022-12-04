@@ -347,11 +347,16 @@ class GamesModel extends Model
 
                                 $battle_three = $this->battle_turn($character_three, $enemy_one, $enemy_two, $enemy_three, $dice);
 
-                                
-                        
+                                if($this->battle_life($character_one->character_life) || $this->battle_life($character_two->character_life) || $this->battle_life($character_three->character_life)) {
+                                        
+                                        $game = false;
+                                }
+                        }
+                        elseif ($actions == 2) { 
 
-
-                                die;
+                                $character_one->character_life += 100;
+                                $character_two->character_life += 100;
+                                $character_three->character_life += 100;
 
                         } else {
 
