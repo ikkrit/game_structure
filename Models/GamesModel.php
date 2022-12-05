@@ -210,11 +210,15 @@ class GamesModel extends Model
 
                         if ($this->battle_life($enemy_one->enemy_life)) {
 
+                                echo "{$enemy_one->enemy_name} attaque <br>";
+
                                 $character->character_life = $this->battle_degats($enemy_one->enemy_attack, $character->character_life, $dice);
 
                                 echo "{$character->character_name} à subie {$enemy_one->enemy_attack} points de degats de {$enemy_one->enemy_name} <br> il reste {$character->character_life} de point de vie <br>";
 
                                 if ($this->battle_life($character->character_life)) {
+
+                                        echo "{$character->character_name} attaque <br>";
 
                                         $enemy_one->enemy_life = $this->battle_degats($character->character_attack, $enemy_one->enemy_life, $dice);
 
@@ -237,11 +241,15 @@ class GamesModel extends Model
 
                         if ($this->battle_life($enemy_two->enemy_life)) {
 
+                                echo "{$enemy_two->enemy_name} attaque <br>";
+
                                 $character->character_life = $this->battle_degats($enemy_two->enemy_attack, $character->character_life, $dice);
 
                                 echo "{$character->character_name} à subie {$enemy_two->enemy_attack} points de degats de {$enemy_two->enemy_name} <br> il reste {$character->character_life} de point de vie <br>";
 
                                 if ($this->battle_life($character->character_life)) {
+
+                                        echo "{$character->character_name} attaque <br>";
 
                                         $enemy_two->enemy_life = $this->battle_degats($character->character_attack, $enemy_two->enemy_life, $dice);
 
@@ -271,11 +279,15 @@ class GamesModel extends Model
 
                         if ($this->battle_life($enemy_three->enemy_life)) {
 
+                                echo "{$enemy_three->enemy_name} attaque <br>";
+
                                 $character->character_life = $this->battle_degats($enemy_three->enemy_attack, $character->character_life, $dice);
 
                                 echo "{$character->character_name} à subie {$enemy_three->enemy_attack} points de degats de {$enemy_three->enemy_name} <br> il reste {$character->character_life} de point de vie <br>";
 
                                 if ($this->battle_life($character->character_life)) {
+
+                                        echo "{$character->character_name} attaque <br>";
 
                                         $enemy_three->enemy_life = $this->battle_degats($character->character_attack, $enemy_three->enemy_life, $dice);
 
@@ -325,15 +337,11 @@ class GamesModel extends Model
                 $game = true;
 
                 $character_one = $characters[0];
-
                 $character_two = $characters[1];
-
                 $character_three = $characters[2];
 
                 $enemy_one = $enemy[0];
-
                 $enemy_two = $enemy[1];
-
                 $enemy_three = $enemy[2];
 
                 while ($game === true) {
@@ -347,10 +355,30 @@ class GamesModel extends Model
 
                                 $battle_three = $this->battle_turn($character_three, $enemy_one, $enemy_two, $enemy_three, $dice);
 
-                                if($this->battle_life($character_one->character_life) || $this->battle_life($character_two->character_life) || $this->battle_life($character_three->character_life)) {
+                                if($this->battle_life($enemy_one->enemy_life) 
+                                        && $this->battle_life($enemy_two->enemy_life) 
+                                        && $this->battle_life($enemy_three->enemy_life)) {
                                         
-                                        $game = false;
+                                        $game = true;
+
+                                } else {
+
+                                        if($this->battle_life($character_one->character_life) 
+                                                || $this->battle_life($character_two->character_life) 
+                                                || $this->battle_life($character_three->character_life)) {
+
+                                                $battle = "Combat gagné";
+                                        
+                                                $game = false;
+
+                                        } else {
+
+                                                $battle = "Combat perdu";
+
+                                                $game = false;
+                                        }
                                 }
+
                         }
                         elseif ($actions == 2) { 
 
@@ -363,44 +391,10 @@ class GamesModel extends Model
                                 $game = false;
                         }
                 }
+
+                echo $battle;
         }
 
-        public function battle_action($character_battle, $enemy_battle)
-        {
-
-                // BOUCLE DU COMBAT
-
-                // CHARACTERS
-                $battle_order_characters = $character_battle[rand(0, count($character_battle) - 1)];
-
-                // ENEMY
-                $battle_order_enemy = $enemy_battle[rand(0, count($enemy_battle) - 1)];
-
-
-                $battle = false;
-
-                while ($battle == false) {
-
-                        if ($battle_order_characters->character_life > 0) {
-                                if ($battle_order_enemy->enemy_life > 0) {
-                                        echo "<div class='battle__start battle__box'>
-                                        {$battle_order_characters->character_name} Attaque {$battle_order_enemy->enemy_name}
-                                </div>";
-                                        echo "<div class='battle__action battle__box'>
-                                        {$battle_order_enemy->enemy_name} reçois {$battle_order_enemy->enemy_life} de degats
-                                </div>";
-
-                                        die;
-                                }
-                        }
-                        /*while(($enemy[0]->enemy_life) > 0) {
-                        $enemy[0]->enemy_attack -= $characters[0]->character_life;
-                            echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";
-                    }
-                        
-                    echo "<div class 'battle_box'>{$characters[0]->character_name} perd {$characters[0]->character_life} de point de vie</div>";*/
-                }
-        }
 
         public function getGame_id()
         {
