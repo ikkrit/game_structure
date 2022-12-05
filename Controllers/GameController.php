@@ -112,9 +112,12 @@
             
             $battle_enemy = $gameModel->battle_enemy($enemy_random1, $enemy_random2, $enemy_random3);
 
-            $action = $gameModel->battle($battle_characters,$battle_enemy,1,$gameModel->throw_dice());
+            $action = $gameModel->battle_action($battle_characters,$battle_enemy,1,$gameModel->throw_dice());
 
-            
+            if($action) {
+
+                $this->render('game/game_win', [], 'home', 'game');
+            }
 
         }
 
