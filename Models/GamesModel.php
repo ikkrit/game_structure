@@ -26,49 +26,124 @@ class GamesModel extends Model
                 if ($zone == 4) {
 
                         if ($choice == 1) {
-                                $constants = [ConstantsGameChapOne::CHAP_01_01,
-                                              ConstantsGameChapOne::CHAP_01_02,
-                                              ConstantsGameChapOne::CHAP_01_03,
-                                              ConstantsGameChapOne::CHAP_01_04,
-                                              ConstantsGameChapOne::CHAP_01_05,
-                                              ConstantsGameChapOne::CHAP_01_06];
-                                $page = "game_party";
-                        } elseif ($choice == 2) {
-                                $constants = ConstantsGameChapOne::CHAP_1_BAD1;
-                                $page = "game_lose";
-                        } elseif ($choice == 3) {
-                                $constants = ConstantsGameChapOne::CHAP_1_BAD2;
-                                $page = "game_lose";
-                        } else {
-                                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
-                                $page = "game_lose";
-                        }
-                } elseif ($zone == 2) {
 
-                        if ($choice == 1) {
-                                $constants = ConstantsGameChapOne::CHAP_01_01;
+                                $constants = [
+                                        [ "start_1" => ConstantsGameChapOne::CHAP_01_INTRO_4],
+                                        [ "start_2" => ConstantsGameChapOne::CHAP_01_INTRO_5],
+                                        [ "start_3" => ConstantsGameChapOne::CHAP_01_INTRO_6],
+                                        [ "text_1" => ConstantsGameChapOne::CHAP_01_01],
+                                        [ "text_2" => ConstantsGameChapOne::CHAP_01_02],
+                                        [ "text_3" => ConstantsGameChapOne::CHAP_01_03],
+                                        [ "text_4" => ConstantsGameChapOne::CHAP_01_04],
+                                ];
+
                                 $page = "game_party";
+
                         } elseif ($choice == 2) {
+
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD1;
                                 $page = "game_lose";
+
                         } elseif ($choice == 3) {
+
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD2;
                                 $page = "game_lose";
+
                         } else {
+
                                 $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                                 $page = "game_lose";
                         }
                 } elseif ($zone == 3) {
 
                         if ($choice == 1) {
-                                $constants = ConstantsGameChapOne::CHAP_01_01;
+
+                                $constants = [
+                                        [ "start_1" => ConstantsGameChapOne::CHAP_01_INTRO_4],
+                                        [ "start_2" => ConstantsGameChapOne::CHAP_01_INTRO_5],
+                                        [ "start_3" => ConstantsGameChapOne::CHAP_01_INTRO_6],
+                                        [ "text_1" => ConstantsGameChapOne::CHAP_01_01],
+                                        [ "text_2" => ConstantsGameChapOne::CHAP_01_02],
+                                        [ "text_3" => ConstantsGameChapOne::CHAP_01_03],
+                                        [ "text_4" => ConstantsGameChapOne::CHAP_01_04],
+                                ];
+
                                 $page = "game_party";
+
                         } elseif ($choice == 2) {
+
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD1;
                                 $page = "game_lose";
+
                         } elseif ($choice == 3) {
+
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD2;
                                 $page = "game_lose";
+
+                        } else {
+
+                                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                                $page = "game_lose";
+                        }
+                } elseif ($zone == 6) {
+
+                        if ($choice == 1) {
+
+                                $constants = [
+                                        [ "start_1" => ConstantsGameChapOne::CHAP_01_INTRO_4],
+                                        [ "start_2" => ConstantsGameChapOne::CHAP_01_INTRO_5],
+                                        [ "start_3" => ConstantsGameChapOne::CHAP_01_INTRO_6],
+                                        [ "text_1" => ConstantsGameChapOne::CHAP_01_01],
+                                        [ "text_2" => ConstantsGameChapOne::CHAP_01_02],
+                                        [ "text_3" => ConstantsGameChapOne::CHAP_01_03],
+                                        [ "text_4" => ConstantsGameChapOne::CHAP_01_04],
+                                ];
+
+                                $page = "game_party";
+
+                        } elseif ($choice == 2) {
+
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                                $page = "game_lose";
+
+                        } elseif ($choice == 3) {
+
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                                $page = "game_lose";
+
+                        } else {
+
+                                $constants = ConstantsGameChapOne::CHAP_1_ERROR;
+                                $page = "game_lose";
+                        }
+
+
+                } elseif ($zone == 7) {
+
+                        if ($choice == 1) {
+
+                                $constants = [
+                                        [ "start_1" => ConstantsGameChapOne::CHAP_01_INTRO_4],
+                                        [ "start_2" => ConstantsGameChapOne::CHAP_01_INTRO_5],
+                                        [ "start_3" => ConstantsGameChapOne::CHAP_01_INTRO_6],
+                                        [ "text_1" => ConstantsGameChapOne::CHAP_01_01],
+                                        [ "text_2" => ConstantsGameChapOne::CHAP_01_02],
+                                        [ "text_3" => ConstantsGameChapOne::CHAP_01_03],
+                                        [ "text_4" => ConstantsGameChapOne::CHAP_01_04],
+                                ];
+
+                                $page = "game_party";
+
+                        } elseif ($choice == 2) {
+
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD1;
+                                $page = "game_lose";
+
+                        } elseif ($choice == 3) {
+
+                                $constants = ConstantsGameChapOne::CHAP_1_BAD2;
+                                $page = "game_lose";
+
                         } else {
                                 $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                                 $page = "game_lose";
