@@ -34,15 +34,15 @@
             </div>
 
             <div class="choice__box box-1">
-                <a href="/game/choice/one/6/1">Tu décide de partir la secourir et plonge dans le vortex</a>
+                <a href="/game/choice/one/4/1">Tu décide de partir la secourir et plonge dans le vortex</a>
             </div>
 
             <div class="choice__box box-2">
-                <a href="/game/choice/one/6/2">Tu jetes Lucca dans le vortex</a>
+                <a href="/game/choice/one/4/2">Tu jetes Lucca dans le vortex</a>
             </div>
 
             <div class="choice__box box-3">
-                <a href="/game/choice/one/6/3">Tu rentre chez toi aller dormir...</a>
+                <a href="/game/choice/one/4/3">Tu rentre chez toi aller dormir...</a>
             </div>
 
         </div>

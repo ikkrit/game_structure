@@ -5,13 +5,15 @@
     class ConstantsGameChapOne {
 
         // CONST INTRO
+        
         public const CHAP_01_INTRO_1 = "En l'an 1000, la fête du millénaire se tient sur la place de Lynne. Lucca, une amie d'enfance de Chrono, passionnée par les machines, y présente sa dernière invention. Chrono s'y rend comme de nombreux habitants du royaume et y bouscule par mégarde une jeune fille, Marle, puis les deux jeunes gens font connaissance.";
 
         public const CHAP_01_INTRO_2 = "Ils se rendent ensemble voir Lucca et son invention, un téléporteur, qui permet de se déplacer de quelques mètres. Chrono l'essaie et se retrouve téléporté instantanément d'un point à l'autre de la machine.";
 
         public const CHAP_01_INTRO_3 = "Mais lorsque vient le tour de Marle, le pendentif qu'elle porte se met à réagir étrangement et la jeune fille disparaît dans un vortex.<br>Chrono ramasse alors le pendentif encore présent. ";
 
-        // CONST GAME
+        // CONST GAME ZONE 3
+
         public const CHAP_01_01 = "Il se retrouve 400 ans en arrière au Moyen Âge où Marle, qui s'avère être en fait la princesse Marledia, est confondue par les habitants avec la reine Lynne disparue.";
 
         public const CHAP_01_02 = "Celle-ci accueille Chrono au château de Gardia avant d'être apparemment effacée du continuum espace-temps. En effet, en prenant la place de son ancêtre, Marle a modifié involontairement le cours de l'histoire et compromis sa propre existence.";
@@ -21,6 +23,8 @@
         public const CHAP_01_05 = "Il l'affronte, le vainc et retrouve le vrai chancelier.";
 
         public const CHAP_01_06 = " De retour au château, Chrono et Lucca retrouvent Marle alors que la reine reprend sa place.";
+
+        // CONST GAME ZONE 4
 
         public const CHAP_01_07 = "Les trois amis retournent dans leur époque grâce à un dispositif mis au point par Lucca.";
 

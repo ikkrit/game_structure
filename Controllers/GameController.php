@@ -78,12 +78,12 @@
         public function choice(string $chapitre,int $zone, int $choice)
         {
             $choice_chapitre = strip_tags($chapitre);
-            $choice_zone = strip_tags($zone);
-            $choice_choice = strip_tags($choice);
+            $choice_zone = intval(strip_tags($zone));
+            $choice = intval(strip_tags($choice));
 
             $gameModel = new GamesModel;
             
-            $chapitre_choice = $gameModel->chapitre_select($choice_chapitre,$choice_choice ,$choice_zone);
+            $chapitre_choice = $gameModel->chapitre_select($choice_chapitre, $choice_zone, $choice);
         
             $this->render("game/$chapitre_choice[1]", ['party' => $chapitre_choice[0]], 'home', 'game');
         }
@@ -116,8 +116,14 @@
 
             if($action) {
 
-                $this->render('game/game_win', [], 'home', 'game');
+                $this->render('game/game_party', [], 'home', 'game');
+
+            } else {
+
+                $this->render('game/game_lose', [], 'home', 'game');
             }
+
+
 
         }
 

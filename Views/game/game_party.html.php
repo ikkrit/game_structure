@@ -1,1 +1,1 @@
-<?=$party;?>
+<?php var_dump($party);?>

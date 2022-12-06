@@ -23,10 +23,15 @@ class GamesModel extends Model
 
         public function chapitre_one(int $zone, int $choice)
         {
-                if ($zone == 1) {
+                if ($zone == 4) {
 
                         if ($choice == 1) {
-                                $constants = ConstantsGameChapOne::CHAP_01_01;
+                                $constants = [ConstantsGameChapOne::CHAP_01_01,
+                                              ConstantsGameChapOne::CHAP_01_02,
+                                              ConstantsGameChapOne::CHAP_01_03,
+                                              ConstantsGameChapOne::CHAP_01_04,
+                                              ConstantsGameChapOne::CHAP_01_05,
+                                              ConstantsGameChapOne::CHAP_01_06];
                                 $page = "game_party";
                         } elseif ($choice == 2) {
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD1;
