@@ -12,7 +12,7 @@
 
         // CONST INTRO ZONE 4
         
-        public const CHAP_01_INTRO_PRESENT_01 = "En l'an 1000, la fête du millénaire se tient sur la place de Lynne. Lucca, une amie d'enfance de Chrono, passionnée par les machines, y présente sa dernière invention. Chrono s'y rend comme de nombreux habitants du royaume et y bouscule par mégarde une jeune fille, Marle, puis les deux jeunes gens font connaissance.";
+        public const CHAP_01_INTRO_PRESENT_01 = "En l'an 1000, la fête du millénaire se tient sur la place de Lynne. Lucca, une amie d'enfance de Chrono, passionnée par les machines, y présente sa dernière invention. Chrono s'y rend comme de nombreux habitants du royaume.";
 
         public const CHAP_01_INTRO_PRESENT_02 = "Ils se rendent ensemble voir Lucca et son invention, un téléporteur, qui permet de se déplacer de quelques mètres. Chrono l'essaie et se retrouve téléporté instantanément d'un point à l'autre de la machine.";
 
@@ -20,17 +20,25 @@
 
         // CONST CHOICE ZONE 4
 
-        public const CHAP_01_CHOICE_PRESENT_01 = "Tu décide de partir la secourir et plonge dans le vortex";
+        public const CHAP_01_CHOICE_PRESENT_TEXT_01 = "Tu bouscule par mégarde une jeune fille.";
 
-        public const CHAP_01_CHOICE_PRESENT_02 = "Tu jetes Lucca dans le vortex";
+        public const CHAP_01_CHOICE_PRESENT_01 = "";
 
-        public const CHAP_01_CHOICE_PRESENT_03 = "Tu rentre chez toi aller dormir...";
+        public const CHAP_01_CHOICE_PRESENT_02 = "";
 
-        public const CHAP_01_CHOICE_PRESENT_04 = "";
+        public const CHAP_01_CHOICE_PRESENT_03 = "";
 
-        public const CHAP_01_CHOICE_PRESENT_05 = "";
+        public const CHAP_01_CHOICE_PRESENT_04 = "Tu décide de partir la secourir et plonge dans le vortex";
 
-        public const CHAP_01_CHOICE_PRESENT_06 = "";
+        public const CHAP_01_CHOICE_PRESENT_05 = "Tu jetes Lucca dans le vortex";
+
+        public const CHAP_01_CHOICE_PRESENT_06 = "Tu rentre chez toi aller dormir...";
+
+        // CONST CHOICE RESPONSE ZONE 4
+
+        public const CHAP_01_ZONE_4_GOOD_01 = "Marle, puis les deux jeunes gens font connaissance.";
+        public const CHAP_01_ZONE_4_BAD_01 = "Marle te regarde d'un drôle de regard...";
+        public const CHAP_01_ZONE_4_BAD_02 = "Marle ce sauve en courant...";
 
         // CONST GAME ZONE 4
 

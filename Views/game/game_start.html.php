@@ -17,13 +17,15 @@
 
         <div class="start__img-2"></div>
 
-        <div class="start__text-2">
-            <p><?=ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_02;?></p>
-        </div>
+        <div class="start__text-2"><p><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_TEXT_01;?></p></div>
 
         <div class="start__img-3"></div>
 
-        <div class="start__text-3">
+        <div class="start__text-3"><p><?=ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_02;?></p></div>
+
+        <div class="start__img-4"></div>
+
+        <div class="start__text-4">
             <p><?=ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_03;?></p>
         </div>
 
