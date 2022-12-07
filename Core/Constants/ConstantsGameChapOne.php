@@ -22,11 +22,15 @@
 
         public const CHAP_01_CHOICE_PRESENT_TEXT_01 = "Tu bouscule par mégarde une jeune fille.";
 
-        public const CHAP_01_CHOICE_PRESENT_01 = "";
+        public const CHAP_01_CHOICE_PRESENT_TEXT_02 = "Tu bouscule par mégarde une jeune fille.";
 
-        public const CHAP_01_CHOICE_PRESENT_02 = "";
+        public const CHAP_01_CHOICE_PRESENT_TEXT_03 = "Tu bouscule par mégarde une jeune fille.";
 
-        public const CHAP_01_CHOICE_PRESENT_03 = "";
+        public const CHAP_01_CHOICE_PRESENT_01 = "Tu t'excuses et tu l'aide à se relever";
+
+        public const CHAP_01_CHOICE_PRESENT_02 = "Tu fais mine de rien et tu continue ton chemin...";
+
+        public const CHAP_01_CHOICE_PRESENT_03 = "Tu l'insulte et lui dit de faire attention";
 
         public const CHAP_01_CHOICE_PRESENT_04 = "Tu décide de partir la secourir et plonge dans le vortex";
 
@@ -37,7 +41,9 @@
         // CONST CHOICE RESPONSE ZONE 4
 
         public const CHAP_01_ZONE_4_GOOD_01 = "Marle, puis les deux jeunes gens font connaissance.";
+
         public const CHAP_01_ZONE_4_BAD_01 = "Marle te regarde d'un drôle de regard...";
+
         public const CHAP_01_ZONE_4_BAD_02 = "Marle ce sauve en courant...";
 
         // CONST GAME ZONE 4

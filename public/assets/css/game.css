@@ -34,3 +34,25 @@
     font-size: 2rem;
 }
 
+
+/********************* GAME START *********************/
+
+.game__start {
+    
+}
+
+.start__intro-img img {
+    width: 100%;
+}
+
+
+.game__start h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.start__container {
+    width: 95%;
+    margin: auto;
+}
+
