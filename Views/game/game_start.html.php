@@ -27,20 +27,18 @@
 
             <div class="start__choice-box">
 
-                <div class="start__choice-main">
+                <div class="choice__box choice__title">
                     <h4 class="choice__container">A toi de jouer</h4>
                 </div>
 
-                <div class="choice__box box-1">
+                <div class="choice__box">
+
                     <a href="/game/choice/one/4/1"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_01;?></a>
-                </div>
 
-                <div class="choice__box box-1">
                     <a href="/game/choice/one/4/1"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_02;?></a>
-                </div>
 
-                <div class="choice__box box-1">
                     <a href="/game/choice/one/4/1"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_03;?></a>
+
                 </div>
 
             </div>
