@@ -39,21 +39,25 @@ class GamesModel extends Model
                                 ];
 
                                 $page = "game_party";
+                                $valid = true;
 
                         } elseif ($choice == 2) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD1;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } elseif ($choice == 3) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD2;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } else {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                                 $page = "game_lose";
+                                $valid = false;
                         }
                 } elseif ($zone == 3) {
 
@@ -71,21 +75,25 @@ class GamesModel extends Model
                                 ];
 
                                 $page = "game_party";
+                                $valid = true;
 
                         } elseif ($choice == 2) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD1;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } elseif ($choice == 3) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD2;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } else {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                                 $page = "game_lose";
+                                $valid = false;
                         }
                 } elseif ($zone == 6) {
 
@@ -103,21 +111,25 @@ class GamesModel extends Model
                                 ];
 
                                 $page = "game_party";
+                                $valid = true;
 
                         } elseif ($choice == 2) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD1;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } elseif ($choice == 3) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD2;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } else {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                                 $page = "game_lose";
+                                $valid = false;
                         }
 
 
@@ -137,27 +149,32 @@ class GamesModel extends Model
                                 ];
 
                                 $page = "game_party";
+                                $valid = true;
 
                         } elseif ($choice == 2) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD1;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } elseif ($choice == 3) {
 
                                 $constants = ConstantsGameChapOne::CHAP_1_BAD2;
                                 $page = "game_lose";
+                                $valid = false;
 
                         } else {
                                 $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                                 $page = "game_lose";
+                                $valid = false;
                         }
                 } else {
                         $constants = ConstantsGameChapOne::CHAP_1_ERROR;
                         $page = "game_lose";
+                        $valid = false;
                 }
 
-                $chapitre_one = [$constants, $page];
+                $chapitre_one = [$constants, $page, $valid];
 
                 return $chapitre_one;
         }

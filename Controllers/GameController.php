@@ -85,7 +85,7 @@
             
             $chapitre_choice = $gameModel->chapitre_select($choice_chapitre, $choice_zone, $choice);
         
-            $this->render("game/$chapitre_choice[1]", ['party' => $chapitre_choice[0]], 'home', 'game');
+            $this->render("game/$chapitre_choice[1]", ['party' => $chapitre_choice], 'home', 'game');
         }
 
         public function battle(int $zone)

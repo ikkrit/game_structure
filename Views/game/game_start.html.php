@@ -20,9 +20,9 @@
             </div>
 
             <div class="intro__img">
-                <img src="/assets/img/game/chap_one/chap_one_1.webp" alt="">
-                <img src="/assets/img/game/chap_one/chap_one_2.webp" alt="">
-                <img src="/assets/img/game/chap_one/chap_one_3.webp" alt="">
+                <img src="/assets/img/game/start/chap_start_1.webp" alt="">
+                <img src="/assets/img/game/start/chap_start_2.webp" alt="">
+                <img src="/assets/img/game/start/chap_start_3.webp" alt="">
             </div>
 
         </div>
@@ -41,9 +41,9 @@
 
                     <a href="/game/choice/one/4/1"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_01;?></a>
 
-                    <a href="/game/choice/one/4/1"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_02;?></a>
+                    <a href="/game/choice/one/4/2"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_02;?></a>
 
-                    <a href="/game/choice/one/4/1"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_03;?></a>
+                    <a href="/game/choice/one/4/3"><?=ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_03;?></a>
 
                 </div>
 

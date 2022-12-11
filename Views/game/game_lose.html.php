@@ -1,7 +1,8 @@
 <div class="game__lose">
 
     <div class="lose__message">
-        <?=$party;?>
+        <?php var_dump($party) ?>
+        <?=$party[0];?>
     </div>
 
     <div class="lose">
