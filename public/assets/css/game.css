@@ -56,6 +56,16 @@
     margin: auto;
 }
 
+.intro__img {
+    width: 100%;
+    display: flex;
+}
+
+.intro__img img {
+    width: 30%;
+    margin: auto;
+}
+
 .start__choice-box {
     display: flex;
     flex-direction: column;
@@ -94,5 +104,10 @@
     background: var(--color-white);
     border-radius: var(--radius);
     box-shadow: var(--shadow-box);
+}
+
+.choice__box a:hover {
+    color: var(--color-white);
+    background: var(--main-red);
 }
 

@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <h2 class="logo">RPG Nav</h2>
+    <h2 class="logo"><img src="/assets/img/logos/logo.png" alt="logo rpg_nav"></h2>
     <div class="toggle" onclick="toggleMenu();"></div>
 
     <ul class="navigation">
