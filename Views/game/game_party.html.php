@@ -1,18 +1,19 @@
 <div class="game__party">
 
+<?php var_dump($party) ?>
+
     <div class="party__intro-img">
         <img src="/assets/img/game/chap_one/chap_one_back.png" alt="">
     </div>
 
-    <h1>Prologue</h1>
+    <h1><?=$party[0]['title']?></h1>
 
     <div class="party__container">
-        <h2>L'aventure commence...</h2>
 
         <div class="party__intro">
 
             <div class="intro__text">
-                <h2>Chapitre 1 : <!--<span><?=utf8_encode($locations->location_name);?></span>(<?=$locations->location_time;?> après JC)--></h2>
+                <!--<h2>Chapitre 1 : utf8_encode();?></span>( après JC)</h2>-->
                 <h3></h3>
                 <p></p>
             </div>
@@ -37,11 +38,11 @@
 
                 <div class="choice__box">
 
-                    <a href="/game/choice/one/4/1"></a>
+                    <a href="/game/choice/one/4/1"><?=$party[0]['choice_one']?></a>
 
-                    <a href="/game/choice/one/4/2"></a>
+                    <a href="/game/choice/one/4/2"><?=$party[0]['choice_two']?></a>
 
-                    <a href="/game/choice/one/4/3"></a>
+                    <a href="/game/choice/one/4/3"><?=$party[0]['choice_three']?></a>
 
                 </div>
 

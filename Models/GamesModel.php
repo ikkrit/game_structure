@@ -28,14 +28,12 @@ class GamesModel extends Model
                         if ($choice == 1) {
 
                                 $constants = [
-                                        [ "title_1" => ConstantsGameChapOne::CHAP_01_TITLE_01],
-                                        [ "present_1" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_01],
-                                        [ "present_2" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_02],
-                                        [ "present_3" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_03],
-                                        [ "text_1" => ConstantsGameChapOne::CHAP_01_01],
-                                        [ "text_2" => ConstantsGameChapOne::CHAP_01_02],
-                                        [ "text_3" => ConstantsGameChapOne::CHAP_01_03],
-                                        [ "text_4" => ConstantsGameChapOne::CHAP_01_04],
+                                        "title" => ConstantsGameChapOne::CHAP_01_TITLE_01,
+                                        "good_choice" => ConstantsGameChapOne::CHAP_01_ZONE_4_GOOD_01,
+                                        "present" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_02,
+                                        "choice_one" => ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_04,
+                                        "choice_two" => ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_05,
+                                        "choice_three" => ConstantsGameChapOne::CHAP_01_CHOICE_PRESENT_06,
                                 ];
 
                                 $page = "game_party";
@@ -139,9 +137,8 @@ class GamesModel extends Model
 
                                 $constants = [
                                         [ "title_1" => ConstantsGameChapOne::CHAP_01_TITLE_01],
-                                        [ "present_1" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_01],
-                                        [ "present_2" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_02],
-                                        [ "present_3" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_03],
+                                        [ "present_1" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_02],
+                                        [ "present_2" => ConstantsGameChapOne::CHAP_01_INTRO_PRESENT_03],
                                         [ "text_1" => ConstantsGameChapOne::CHAP_01_01],
                                         [ "text_2" => ConstantsGameChapOne::CHAP_01_02],
                                         [ "text_3" => ConstantsGameChapOne::CHAP_01_03],

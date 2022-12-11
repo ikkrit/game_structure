@@ -8,7 +8,7 @@
 
         public const CHAP_01_TITLE_01 = "La fête du millénaire";
 
-        public const CHAP_01_TITLE_02 = "La fête du millénaire";
+        public const CHAP_01_TITLE_02 = "";
 
         // CONST INTRO ZONE 4
         
@@ -20,11 +20,11 @@
 
         // CONST CHOICE ZONE 4
 
-        public const CHAP_01_CHOICE_PRESENT_TEXT_01 = "Tu bouscule par mégarde une jeune fille.";
+        public const CHAP_01_CHOICE_PRESENT_TEXT_01 = "Sur le chemin tu bouscule par mégarde une jeune fille.";
 
-        public const CHAP_01_CHOICE_PRESENT_TEXT_02 = "Tu bouscule par mégarde une jeune fille.";
+        public const CHAP_01_CHOICE_PRESENT_TEXT_02 = "";
 
-        public const CHAP_01_CHOICE_PRESENT_TEXT_03 = "Tu bouscule par mégarde une jeune fille.";
+        public const CHAP_01_CHOICE_PRESENT_TEXT_03 = "";
 
         public const CHAP_01_CHOICE_PRESENT_01 = "Tu t'excuses et tu l'aide à se relever";
 
@@ -40,11 +40,11 @@
 
         // CONST CHOICE RESPONSE ZONE 4
 
-        public const CHAP_01_ZONE_4_GOOD_01 = "Marle, puis les deux jeunes gens font connaissance.";
+        public const CHAP_01_ZONE_4_GOOD_01 = "La jeune fille s'appel Marle et les deux jeunes gens font connaissance.";
 
-        public const CHAP_01_ZONE_4_BAD_01 = "Marle te regarde d'un drôle de regard...";
+        public const CHAP_01_ZONE_4_BAD_01 = "La jeune fille te regarde d'un drôle de regard...";
 
-        public const CHAP_01_ZONE_4_BAD_02 = "Marle ce sauve en courant...";
+        public const CHAP_01_ZONE_4_BAD_02 = "La jeune fille ce sauve en courant...";
 
         // CONST GAME ZONE 4
 
